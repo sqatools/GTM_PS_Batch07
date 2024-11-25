@@ -1,0 +1,21 @@
+1. Create git account
+2. Create Repository
+3. Install git client
+4. git clone <repo url>
+   ->  Open git terminal in automation project folder
+   ->  Then run git clone command
+   git clone https://github.com/sqatools/GTM_PS_Batch07.git 
+5. Create a folder with your name inside the repo folder
+6. Add one file in that folder.
+
+7. Go to git terminal and run 'git status' command
+   -> newly added folder will be visible in red color
+
+8. git add <folder path>
+
+9. check git status again 'git status', newly added folder will be visible in green color
+
+10. git commit -m "add folder"
+
+11. git push
+
