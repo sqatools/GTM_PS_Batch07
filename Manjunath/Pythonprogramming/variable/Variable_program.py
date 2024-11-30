@@ -171,7 +171,25 @@ print("RHS output :", RHS)
 4. program to get simple interest
 5. program to get compound interest
 """
-<<<<<<< HEAD
 
-=======
->>>>>>> 2eb68ed83819192060b755710c2a495c7dfc13c7
+# write a python program to solve quadratic equation
+# (a-b)^2 = a^2 + b^2 - 2ab
+a = 20
+b = 40
+LHS = (a-b)**2
+print("LHS :", LHS)  #1764
+
+RHS = a**2 + b**2 - 2*a*b
+print("RHS output :", RHS)
+
+
+################################################
+# write a python program to solve quadratic equation
+# (a+b)^3 = a^3 + b^3 + 3a^2b +3ab^2
+a = 20
+b = 40
+LHS = (a+b)**3
+print("LHS :", LHS)  #1764
+
+RHS = a**3 + b**3 + 3*a**2*b + 3*a*b**2
+print("RHS output :", RHS)
