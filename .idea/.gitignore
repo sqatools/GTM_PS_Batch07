@@ -1,3 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/vcs.xml
+/misc.xml
+/modules.xml
+/inpectionProfiles/profiles_setting.xml
+/inpectionProfiles/Project_Default.xml
