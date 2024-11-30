@@ -171,4 +171,3 @@ print("RHS output :", RHS)
 4. program to get simple interest
 5. program to get compound interest
 """
-
