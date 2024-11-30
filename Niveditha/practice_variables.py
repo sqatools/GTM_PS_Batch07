@@ -14,5 +14,6 @@ Print("Value of RHS:", RHS)
 a = 5
 b = 6
 LHS = (a+b)**3
-Print("value of LHS:",LHS)
+print("value of LHS:",LHS)
 RHS = a**3+b**3+3*a*b*(a+b)
+print("value of RHS:",RHS)
