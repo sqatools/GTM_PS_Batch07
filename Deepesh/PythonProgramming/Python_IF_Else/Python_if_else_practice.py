@@ -81,11 +81,121 @@ False or True : True
 True or True : True
 False or False : False
 """
+"""
 print("_"*50)
 num1 = 24
 if num1%2 == 0 and num1%3 ==0:
     print("The number is divisible by 2 and 3")
 else:
      print("The number is not divisible by 2 and 3")
-
+"""
 # The number is divisible by 2 and 3
+
+# same code with or condition
+print("_"*50)
+num1 = 11
+if num1%2 == 0 or num1%3 ==0:
+    print("The number is divisible by 2 or 3")
+else:
+     print("The number is not divisible by 2 or 3")
+
+
+# The number is not divisible by 2 or 3
+
+print("_"*50)
+###############################
+"""
+If - elif - else
+
+if cond1:
+    code
+elif cond2:
+    code
+elif cond3:
+     code
+elif cond4:
+     code
+else:
+      code
+"""
+
+
+print("_"*50)
+# write a python program to check greater number among three values
+a = 50
+b = 100
+c = 100
+
+if a > b and a > c:
+    print("A has greater value  :", a)
+elif b > a and b >c :
+     print("B has greater value  :", b)
+elif c >a and c > b:
+    print("C has greater value  :", c)
+else:
+    print("No one has greater value")
+
+
+"""
+# Nested If condition
+
+if cond1:
+     code
+     if cond2:
+        code
+        if cond3:
+            code
+        else:
+            code
+     else:
+        code
+else:
+    code
+
+"""
+
+print("_"*50)
+# write a python program to implement the nested if condition
+
+round1 = 'fail'
+round2 = 'fail'
+round3 = 'pass'
+
+if round1 == 'pass':
+    print("congrats first round is cleared.")
+    if round2 == 'pass':
+        print("congrats second round is cleared.")
+        if round3 == 'pass':
+            print("Thi round is cleared")
+        else:
+            print("Failed in third round")
+    else:
+        print("sorry second round is not cleared.")
+else:
+    print("First round is not cleared, try next time")
+
+
+print("_"*40)
+##### Write a python with loop condition ##########
+
+marks= 100
+if marks > 100:
+    print("Invalid value marks can not be 100")
+if marks > 30 and marks <= 40:
+    print("Passed with D graf")
+if marks > 40 and marks <= 50:
+    print("Passed with C graf")
+elif marks > 50 and marks <= 70:
+    print("passed with B grade ")
+elif marks > 70 and marks <= 80:
+    print("passed with A grade ")
+elif marks > 80 and marks <= 90:
+    print("passed with A++ grade ")
+elif marks > 90 and marks <= 100:
+    print("passed with Excellent grade ")
+
+#q1. write a python program check the person has voting permission or not
+# get user age with input keyword.
+
+# Write a python program to print square of value if  divisible 2 and cube of
+# value if divisible by 3.
