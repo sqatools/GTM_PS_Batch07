@@ -308,6 +308,151 @@ print(b2, type(b2))
 # True <class 'bool'>
 
 
+######################## Dictionary ###################
+# dict -> int : conversion is not possible
+# dict -> float : conversion is not possible
+
+print("_"*50)
+# dict -> string
+dict1 = {'a': 123, 'b' : 345}
+str1 = str(dict1)
+print(str1, type(str1))
+print(str1[0], str1[4])  # { :
+
+
+print("_"*50)
+
+
+
+### dict -> list ##
+dict2 = {'a': 123, 'b' : 345, 'c': 678}
+list2 = list(dict2)
+print(list2)  # ['a', 'b', 'c']
+
+
+
+print("_"*50)
+
+
+### dict -> tuple ##
+dict3 = {'a': 123, 'b' : 345, 'c': 678}
+tup3 = tuple(dict3)
+print(tup3)
+# ('a', 'b', 'c')
+
+
+print("_"*50)
+
+
+### dict -> set ##
+dict4 = {'a': 123, 'b' : 345, 'c': 678}
+set4 = set(dict4)
+print(set4, type(set4))
+# {'c', 'b', 'a'} <class 'set'>
+
+
+print("_"*50)
+
+######################### Set ###############################
+## set ->  int ## conversion is not possible
+## set ->  float ## conversion is not possible
+
+print("_"*50)
+## set ->  string ##
+set1 = {4, 6, 8, 1, 9}
+str1 = str(set1)
+print(str1, type(str1))
+# {1, 4, 6, 8, 9} <class 'str'>
+print(str1[1]) # 1
+
+
+
+print("_"*50)
+## set ->  list ##
+set2 = {4, 6, 8, 1, 9}
+list2 = list(set2)
+print(list2, type(list2))
+# [1, 4, 6, 8, 9] <class 'list'>
+
+
+print("_"*50)
+
+## set ->  tuple ##
+set3 = {4, 6, 8, 1, 9}
+tup3 = tuple(set3)
+print(tup3, type(tup3))
+# (1, 4, 6, 8, 9) <class 'tuple'>
+
+
+# set ->  dictionary # conversion is not possible
+
+print("_"*50)
+
+
+## set ->  boolean ##
+set_a = set()
+b1 = bool(set_a)
+print(b1, type(b1))
+# False <class 'bool'>
+
+
+set_b = {4, 6, 8}
+b2 = bool(set_b)
+print(b2, type(b2))
+# True <class 'bool'>
+
+
+
+########################## Boolean #################
+
+print("_"*40)
+## bool -> int ##
+var1 = True
+n1 = int(var1)
+print(n1, type(n1))
+# 1 <class 'int'>
+
+var2 = False
+n2 = int(var2)
+print(n2, type(n2))
+# 0 <class 'int'>
+
+
+print("_"*40)
+
+
+## bool -> float ##
+var_a = True
+var_f = float(var_a)
+print(var_f) # 1.0
+
+
+print("_"*40)
+
+
+## bool -> string ##
+b1 = True
+str1 = str(b1)
+print(str1, type(str1), str1[0])
+# True <class 'str'> T
+
+print("_"*40)
+
+
+
+## bool -> list ##  conversion is not possible
+"""
+b2 = True
+l1 = list(b2)
+print(l1, type(l1))
+# TypeError: 'bool' object is not iterable
+"""
+
+
+## bool -> tuple ### conversion is not possible
+## bool -> dictionary ### conversion is not possible
+## bool -> set ### conversion is not possible
+
 
 
 
