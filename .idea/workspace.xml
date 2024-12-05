@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a4980e0-2273-451e-81b2-4b942c36075b" name="Changes" comment="remove id">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deepesh/PythonProgramming/PythonDataType/datatype_conversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deepesh/PythonProgramming/PythonDataType/datatype_conversion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dinesh/python programming/pythondataType/datatype_conversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/dinesh/python programming/pythondataType/datatype_conversion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dinesh/python programming/python_IF_Else/python_if_else_practice.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +63,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.datatype_conversion">
+  <component name="RunManager" selected="Python.python_if_else_practice">
     <configuration name="HW_Python" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GTM_PS_Batch07" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,7 +169,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="python_datatype" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="python_if_else_practice" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GTM_PS_Batch07" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -179,11 +177,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dinesh/python programming/pythondataType" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dinesh/python programming/python_IF_Else" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dinesh/python programming/pythondataType/python_datatype.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dinesh/python programming/python_IF_Else/python_if_else_practice.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.python_if_else_practice" />
         <item itemvalue="Python.datatype_conversion" />
         <item itemvalue="Python.dinesh" />
         <item itemvalue="Python.home work_python" />
         <item itemvalue="Python.HW_Python" />
-        <item itemvalue="Python.python_datatype" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1733205775234</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="remove id">
+      <created>1733408579858</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733408579858</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
