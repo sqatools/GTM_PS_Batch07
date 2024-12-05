@@ -329,19 +329,14 @@ print(set4, type(set4))
 
 
 print("_"*50)
-### dict -> bool ##
+### dict -> set ##
+dict4 = {'a': 123, 'b' : 345, 'c': 678}
+set4 = set(dict4)
+print(set4, type(set4))
+# {'c', 'b', 'a'} <class 'set'>
 
-dict_a = {}
-b1 = bool(dict_a)
-print(b1, type(b1))
-# False <class 'bool'>
 
-
-dict_b = {'Name': 'Mohan', 'Age': 34}
-b2 = bool(dict_b)
-print(b2, type(b2))
-# True <class 'bool'>
-
+print("_"*50)
 
 ######################### Set ###############################
 ## set ->  int ## conversion is not possible

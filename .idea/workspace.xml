@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a4980e0-2273-451e-81b2-4b942c36075b" name="Changes" comment="remove id">
-      <change afterPath="$PROJECT_DIR$/dinesh/python programming/pythondataType/datatype_conversion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deepesh/PythonProgramming/PythonDataType/datatype_conversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deepesh/PythonProgramming/PythonDataType/datatype_conversion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dinesh/python programming/pythondataType/datatype_conversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/dinesh/python programming/pythondataType/datatype_conversion.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +267,21 @@
       <option name="project" value="LOCAL" />
       <updated>1733120920320</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="remove id">
+      <created>1733205768407</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733205768407</updated>
+    </task>
+    <task id="LOCAL-00010" summary="remove id">
+      <created>1733205775234</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733205775234</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
