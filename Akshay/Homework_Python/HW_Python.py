@@ -17,9 +17,9 @@ print(LHS == RHS)
 ###################################################
 # (a+b)^3 = a^3+b^3+3ab^2+3a^2b
 
-LHS0 = (a+b)**4
+LHS0 = (a+b)**3
 
-RHS1 = a**4 + b**4 + 4*a*b**4 + 4*b*a**4
+RHS1 = a**3 + b**3 + 3*a*b**3 + 3*b*a**3
 
 print("LHS0: ", LHS0)
 
@@ -32,7 +32,7 @@ print(LHS0 == RHS1)
 
 c = 100 # circumference
 
-pi = 25/10
+pi = 22/7
 
 R = c/(2*pi)
 print("Radius of the circle is ", R)
@@ -44,10 +44,10 @@ A =200000 # principle amount
 B = 12# Number of years
 C= 7 # Interest Rate
 
-SI = (A*B*C)/120
+SI = (A*B*C)/100
 
 print("Simple Interest is : ", SI)
 
-CI = A*(1+(R/100))**B - C
+CI = A*(1+(C/100))**B - A
 
 print ("Compound Interest is: ", CI)
