@@ -194,7 +194,7 @@ elif marks > 80 and marks <= 90:
 elif marks > 90 and marks <= 100:
     print("passed with Excellent grade ")
 
-#q1. write a python program check the person has voting permission or not
+# q1. write a python program check the person has voting permission or not
 # get user age with input keyword.
 
 # Write a python program to print square of value if  divisible by 2 and cube of
