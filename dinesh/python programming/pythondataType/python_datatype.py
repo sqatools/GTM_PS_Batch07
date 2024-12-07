@@ -14,7 +14,7 @@ Python Data Type
 ##### Integer Data Type #####
 var1 = 100
 print(var1)
-print(type(var1))  # <class 'int'>
+print(type(var1))
 """
 ->  Integer is immutable data type, once it defined we can not update the value.
 ->  Integer data type only consider whole number.
@@ -31,20 +31,18 @@ var5 = 643564356943569435960843586953486905386
 var6 = 0
 var7 = -34343
 print("var5 :", var5, type(var5))
-# 643564356943569435960843586953486905386 <class 'int'>
 
 print("var6 :", var6, type(var6))
-#  0 <class 'int'>
+
 
 print("var7 :", var7, type(var7))
-# -34343 <class 'int'>
 
 
 print("_"*50)
-############ Float data type ###############
+
+########### Float data type ###############
 var_a = 10.23
 print(var_a, type(var_a))
-# 10.23 <class 'float'>
 
 """
 # Properties :
@@ -56,41 +54,38 @@ print(var_a, type(var_a))
 
 var_b = 0.23
 var_c = 0.0
-var_d = 4936322634564.56546564565445654  #
+var_d = 4936322634564.56546564565445654
 var_e = -50.33
 
 print("var_b :", var_b, type(var_b))
-# 0.23 <class 'float'>
 
 print("var_c :", var_c, type(var_c))
-# 0.0 <class 'float'>
+
 
 print("var_d :", var_d, type(var_d))
-# 4936322634564.565 <class 'float'>
+
 
 print("var_e :", var_e, type(var_e))
-# -50.33 <class 'float'>
-
 
 
 print("_"*40)
+
 ################### Complex Number ####################
 # x + yj
 n1 = 30 + 40j
 print(n1, type(n1))
 
-# (30+40j) <class 'complex'>
+
 print("real value :", n1.real)
-# real value : 30.0
 
 print("imaginary value :", n1.imag)
-# imaginary value : 40.0
+
 
 num2 = 50 + 70j
 num3 = 60 + 30j
 
 num4 = num2 + num3
-print("num4 :", num4)  # (110+100j)
+print("num4 :", num4)
 
 ######################### Sequential data type ###########
 
@@ -109,10 +104,10 @@ Programming
 str5 = "345 ^&^&*^^ Hello PYTHON 50+70J"
 
 print("str1 :", str1, type(str1))
-print("+"*10)  # H <class 'str'>
+print("+"*10)
 
 print("str2 :", str2, type(str2))
-# Hello <class 'str'>
+
 print("+"*10)
 
 print("str3 :", str3, type(str3))
@@ -132,10 +127,10 @@ Programming
 """
 
 print("str5 :", str5, type(str5))
-# 345 ^&^&*^^ Hello PYTHON 50+70J <class 'str'>
+
 print("+"*10)
 
-# String Follows positive and negative index
+
 str_a = "Hello"
 
 """
@@ -144,12 +139,12 @@ H   e   l   l   0
 -5 -4  -3   -2  -1  -ve
 """
 
-print(str_a[0]) # H
-print(str_a[-5]) # H
+print(str_a[0])
+print(str_a[-5])
 
 str_b = "Python Programming"
-print(str_b[7])  # P
-print(str_b[-5]) # m
+print(str_b[7])
+print(str_b[-5])
 
 """
 # Properties of String 
@@ -163,10 +158,10 @@ var1 = 'Python'
 print(var1)
 
 print("_"*50)
+
 ################### list data type ##########
 list1 = [3, 3.5, 'Hello', [4, 6, 7]]
-print(list1, type(list1)) # <class 'list'>
-# [3, 3.5, 'Hello', [4, 6, 7]]
+print(list1, type(list1))
 
 """
 # Properties of list
@@ -179,15 +174,14 @@ print(dir(list))
 """
 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
 """
-#         0    1    2    3   4
-list1 = ['a', 'b', 'c', 'd', [4, 6, 7]]
-#         -5   -4   -3   -2   -1
 
-print(list1[1])    # b
-print(list1[4])    # [4, 6, 7]
-print(list1[4][1]) # 6
-print(list1[-1])   # [4, 6, 7]
-print(list1[-1][-1])  # 7
+list1 = ['a', 'b', 'c', 'd', [4, 6, 7]]
+
+print(list1[1])
+print(list1[4])
+print(list1[4][1])
+print(list1[-1])
+print(list1[-1][-1])
 
 list2 = [4, 6, 8, 2, 12]
 list2.append(100)
@@ -196,10 +190,10 @@ print("list2 :", list2)
 
 
 print("_"*50)
+
 ########################## tuple data type ###########
 tup1 = (4, 6, 8, 12, 4.5, 'Hello', [3, 5, 7])
 print(tup1, type(tup1))
-# (4, 6, 8, 12, 4.5, 'Hello', [3, 5, 7]) <class 'tuple'>
 
 """
 # Properties:
@@ -210,9 +204,7 @@ print(tup1, type(tup1))
 ->   Generally we use tuple data type, when data is not going to change further.
      e.g  ->  days in month
         ->  Days in week
-        
 """
-
 
 #       0   1          2             3
 tup2 = (3, 'Python', 'Programming', 'Html')
@@ -228,8 +220,8 @@ tup3 = (4, 4.5,
 print("tup3 :", tup3)
 print(tup3[2: 4])
 # ([36, 63, 44, 34], 'Hello')
-
 print("_"*50)
+
 ####################### Dictionary ##################################
 # {'key' : 'value'}
 var1 = {'a' : 123, 'b' : 456, 'c' : 445}
@@ -241,7 +233,7 @@ print(var1['b']) # 456
 var1[123] = 500
 var1['d'] = 1000
 print(var1)
-# {'a': 123, 'b': 456, 'c': 445, 123: 500, 'd': 1000}
+
 """
 # properties dictionary
 ->  Dict is mutable data type as like list, string
@@ -259,20 +251,15 @@ print(dict2['a']) # 455
 
 dict2['e'] = 600
 print(dict2)
-# {'a': 455, 'b': 456, 'c': 1000, 'e': 600}
-
-# Dictionary methods
 print(dir(dict))
-# 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values'
-
-
 print("_"*50)
+
+
 ##################### Set data type #######################
 # set data only store unique data, duplicate values are not allowed in set
 set1 = {4, 6, 8, 22, 44, 4, 6, 8}
 print(set1)
 
-# {4, 6, 22, 8, 44}
 
 """
 properties of set
@@ -285,19 +272,14 @@ properties of set
 ->  Set store values in random order.
 """
 
-
 #set2 = {4, 5.5, 'Hello', (3, 6, 8), True, False, {'a' : 234}}
 #print(set2)
-# TypeError: unhashable type: 'dict'
-
-# Set Methods
 print(dir(set))
 """
 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection',
  'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove',
  'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
 """
-
 
 ##################### Boolean data type ##################
 """
@@ -308,4 +290,3 @@ print(dir(set))
 
 var1 = True
 print(var1, type(var1))
-# True <class 'bool'>
