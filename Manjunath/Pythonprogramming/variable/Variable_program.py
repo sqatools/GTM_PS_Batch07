@@ -193,3 +193,23 @@ print("LHS :", LHS)  #1764
 
 RHS = a**3 + b**3 + 3*a**2*b + 3*a*b**2
 print("RHS output :", RHS)
+####################################################
+
+
+"""a = input ("enter the value")
+
+if int(a) >= 18 :
+    print ("eligible for vote")
+
+else:
+    print("not eligible")
+
+"""
+#######################################################
+
+a= input("enter the value")
+
+if int(a)%2 ==0 :
+    print (int(a)**2)
+elif    int(a)%3 == 0:
+    print(int(a) ** 3)

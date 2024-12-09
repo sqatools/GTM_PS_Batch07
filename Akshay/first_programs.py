@@ -1,19 +1,12 @@
 print("Hello world")
-######
-
-age =10
-if age >=30 :
-    print ("Allowed to Vote")
-print("Allowed not to Vote")
 
 
-#
-num = int(input(" enter your number1"))
+##print ("_"*50)
+for i in range(1, 100):
+    print(i)
 
-if num % 6 ==0:
-     print(" num is devide  by 4")
-elif num %5==0:
-     print(" num is devided by 5")
-else:
-     print(" cannot be devide  by 4 and 5")
+##print ("_"*50)
 
+for v in range(1, 20):
+    if v%2 != 0:
+        print(v)
