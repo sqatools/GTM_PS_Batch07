@@ -200,7 +200,7 @@ else:
 '''
 
 # 52). A shop will give a 10% discount if the bill is more than 1000, and 20% if the bill is more than 2000. Using the python program Calculate the discount based on the bill.
-
+'''
 x = int(input("Enter the total bill amount: "))
 
 if 2000 >= x > 1000 :
@@ -209,3 +209,12 @@ elif x> 2000:
     print ("The discount is 20%")
 else:
     print("No discount")
+'''
+'''
+for x in range(1, 101):
+    print(x)
+
+for y in range(1,21):
+    if y%2!=0 :
+        print(y)
+'''
