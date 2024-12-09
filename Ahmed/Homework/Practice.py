@@ -95,7 +95,7 @@ elif x%3 == 0:
 else:
     print("The number is not divisible by 2 or 3")
 '''
-
+'''
 #14). Python program to find the largest number among three numbers.
 
 x = int(input("Enter the first number:"))
@@ -109,3 +109,103 @@ elif y>=x and y>=z:
 else:
     print ("The greatest number is", z)
 
+'''
+'''
+# 15). Python program to check any person eligible to vote or not
+
+x = int(input("Enter your age:"))
+
+if x>= 18 :
+    print("You are eligible to vote")
+else:
+    print("You are not eligible for vote")
+'''
+# 16). Python program to check whether any given input is a palindrome.
+'''
+x = input("Enter the input:")
+
+y = x[::-1]
+
+if x == y :
+    print ("The given input is a palindrome")
+else :
+    print("The given input is not a palindrome")
+'''
+# 18). Python program to check whether a student has passed the exam. If marks are greater than 35 students have passed the exam.
+'''
+x = int(input("Enter the mark:"))
+
+if x>= 35:
+    print("PASS")
+else :
+    print("FAIL")
+'''
+# 19). Python program to check whether the given number is positive or negative.
+'''
+x = int(input("Enter the number:"))
+
+if x >= 0:
+    print("The number is positive")
+else :
+    print("The number is negative")
+'''
+# 21). Python program to check whether the given number is positive or negative and even or odd.
+'''
+x = int(input("Enter the number:"))
+
+if x>=0:
+    if x%2 == 0:
+        print("The given number is positive and even")
+    else:
+        print("The given number is positive and odd")
+else :
+    if x%2 == 0:
+        print("The given number is negative and even")
+    else:
+        print("The given number is negative and odd")
+'''
+# 22). Python program to print the largest number from two numbers.
+'''
+x = int(input("Enter the first number:"))
+y = int(input("Enter the Second number:"))
+
+if x>=y:
+    print("The largest number is: ", x)
+else:
+    print("The largest number is: ", y)
+'''
+# 32). Python program to check whether an alphabet is a vowel.
+'''
+vowel = ['A','E','I','O','U','a','e','i','o','u']
+x=input("Enter the character: ")
+
+if x in vowel :
+    print("The given character is a vowel")
+else :
+    print("The given character is not a vowel")
+'''
+
+# 34).  Python program to convert the month name to the number of days.
+'''
+x=input("Enter the Month: ")
+
+if x == ("january" or "march" or "may" or "july" or "august" or "october" or "december") :
+    print ("Number of days is 31")
+elif x == ("april" or "june" or "september" or "november"):
+    print("Number of days is 30")
+elif x == ("february"):
+    print("Number of days is 28 or 29")
+else:
+    print("Invalid Month")
+'''
+
+# 52). A shop will give a 10% discount if the bill is more than 1000, and 20% if the bill is more than 2000. Using the python program Calculate the discount based on the bill.
+
+x = int(input("Enter the total bill amount: "))
+
+if 2000 >= x > 1000 :
+    print ("The discount is 10%")
+elif x> 2000:
+    print ("The discount is 20%")
+else:
+    print("No discount")
