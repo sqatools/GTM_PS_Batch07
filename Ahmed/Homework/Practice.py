@@ -218,3 +218,63 @@ for y in range(1,21):
     if y%2!=0 :
         print(y)
 '''
+# 1). Write a Python loops program to find those numbers which are divisible by 7 and multiple of 5, between 1500 and 2700 (both included).
+'''
+for i in range(1500,2701):
+    if i%5 == 0 and i%7 == 0:
+        print(i,end=" ")
+'''
+# 4). Python Loops program to count the number of even and odd numbers from a series of numbers using python.
+'''
+Input = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+even = 0
+odd = 0
+
+for i in Input:
+    if i%2==0:
+        even=even+1
+    else:
+        odd=odd+1
+print("Number of even numbers: ",even)
+print("Number of odd numbers: ",odd)
+'''
+# 5). Write a program that prints all the numbers from 0 to 6 except 3 and 6 using python.
+'''
+for i in range(0,7):
+    if i!=3 and i!=6:
+        print(i)
+'''
+#6). Write a program to get the Fibonacci series between 0 to 20 using python.
+'''
+x=0
+y=1
+for i in range(0,21):
+    print(x, end=" ")
+    z = x+y
+    x=y
+    y=z
+    
+'''
+'''
+29). Python program to find the electricity bill. According to the following conditions:
+Up to 50 units rs 0.50/unit
+Up to 100 units rs 0.75/unit
+Up to 250 units rs 1.25/unit
+above 250 rs 1.50/unit
+an additional surcharge of 17% is added to the bill
+'''
+units = int(input("Enter the total units: "))
+Amount = 0
+
+for i in range(0,units+1):
+    if i <= 50:
+        Amount = Amount + 0.5
+    elif 100 >= i >50:
+        Amount = Amount + 0.75
+    elif 250 >= i> 100:
+        Amount = Amount + 1.25
+    elif i >250:
+        Amount = Amount + 1.5
+
+Total_Amount = Amount + (Amount*0.17)
+print("The final bill is ", Total_Amount)
