@@ -262,7 +262,7 @@ Up to 100 units rs 0.75/unit
 Up to 250 units rs 1.25/unit
 above 250 rs 1.50/unit
 an additional surcharge of 17% is added to the bill
-'''
+
 units = int(input("Enter the total units: "))
 Amount = 0
 
@@ -278,3 +278,37 @@ for i in range(0,units+1):
 
 Total_Amount = Amount + (Amount*0.17)
 print("The final bill is ", Total_Amount)
+'''
+# 16). Python Loops program to find the sum of all natural numbers between 1 to n using python.
+# sum of all even and odd numbers between 1 to n using python.
+'''
+n = int(input("Enter the number: "))
+sum = 0
+even = 0
+odd = 0
+
+for i in range(1,n+1):
+    sum+=i
+
+
+for j in range(1,n+1):
+    if j%2 == 0:
+        even+=j
+    else:
+        odd+=j
+print("Sum of even values: ",even)
+print("Sum of odd values: ",odd)
+print("Sum of all values: ",sum)
+'''
+num = int(input("Enter a number: "))
+count = 1
+
+for i in range(2, num):
+    if num%i == 0:
+        count += 1
+
+print(count)
+if count > 1:
+    print("It is not prime number")
+else:
+    print("It is a prime number")
