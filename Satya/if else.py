@@ -172,21 +172,56 @@ print("_" * 50)
 
 print("-"*50)
 
-correct_user = "ramki"
-correct_password = "8500631022"
+# correct_user = "ramki"
+# correct_password = "8500631022"
+#
+# username = input("enter username")
+# password = input("enter password")
+#
+# if username == correct_user and password == correct_password:
+#     print("login sucessfull")
+# elif username != correct_user:
+#     print("username is wrong")
+# elif password != correct_password:
+#     print("wrong password")
+# elif username != correct_user and password != correct_password:
+#     print("both are wrong")
 
-username = input("enter username")
-password = input("enter password")
 
-if username == correct_user and password == correct_password:
-    print("login sucessfull")
-elif username != correct_user:
-    print("username is wrong")
-elif password != correct_password:
-    print("wrong password")
-elif username != correct_user and password != correct_password:
-    print("both are wrong")
+# 14). Python program to find the largest number among three numbers.
+#
+# num7 = int(input("enter1"))
+# num8 = int(input("enter2"))
+# num9 = int(input("enter3"))
+#
+# if num7>num8:
+#     if num7>num9:
+#         print("num7 is grater")
+#     else:
+#         print("num9 is grater")
+# else:
+#     if num8>num9:
+#         print("num8 is grater")
+#     else:
+#         print("num9 is grater")
 
 
+# age = int(input("enter age"))
+#
+# if age > 18:
+#     print("person is eligible to vote")
+# else:
+#     print("not eligible")
 
+str1 = "virat is best indian player"
+
+print(str1[1: 25])
+
+for char in str1:
+    print(char, len(str1))
+
+print("-"*50)
+str_d = "we are learning python programming"
+
+print(str_d[: 6: -1])
 
