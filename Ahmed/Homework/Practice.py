@@ -300,6 +300,7 @@ print("Sum of even values: ",even)
 print("Sum of odd values: ",odd)
 print("Sum of all values: ",sum)
 '''
+'''
 num = int(input("Enter a number: "))
 count = 1
 
@@ -312,3 +313,29 @@ if count > 1:
     print("It is not prime number")
 else:
     print("It is a prime number")
+'''
+'''
+str1 = "Virat is best India player"
+
+print(str1[1:-1])
+
+w1=str1[0:5]
+w2=str1[6:9]
+w3=str1[9:13]
+w4=str1[14:19]
+w5=str1[20:]
+print(w1[0]+w1+" "+w2[0]+w2+" "+w3[0]+w3+" "+w4[0]+w4+" "+w5[0]+w5)
+'''
+
+# str1 = We are learning Python Programming
+# 1. swap first and last character of each word
+# 2. Reverse each word of a string
+
+str1 = "We are learning Python Programming"
+w1=str1[0:2]
+w2=str1[3:6]
+w3=str1[7:15]
+w4=str1[16:22]
+w5=str1[23:]
+print(f"{w1[::-1]} {w2[::-1]} {w3[-1]}{w3[1:-1]}{w3[0]} {w4[-1]}{w4[1:-1]}{w4[0]} {w5[-1]}{w5[1:-1]}{w5[0]}")
+print(f'{w1[::-1]} {w2[::-1]} {w3[::-1]} {w4[::-1]} {w5[::-1]}')
