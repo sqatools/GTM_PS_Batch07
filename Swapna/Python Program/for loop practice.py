@@ -28,10 +28,12 @@ w3=str1[7:15]
 print(w3)
 w4=str1[16:22]
 w5=str1[23:]
-print(f"{w1[::-1]} {w2[::-1]} {w3[-1]}{w3[1:-1]}{w3[0]} {w4[-1]}{w4[1:-1]}{w4[0]} {w5[-1]}{w5[1:-1]}{w5[0]}")
+print(f"{w1[::-1]} { w2[-1]}{w2[1:-1]}{w2[0]} {w3[-1]}{w3[1:-1]}{w3[0]} {w4[-1]}{w4[1:-1]}{w4[0]} {w5[-1]}{w5[1:-1]}{w5[0]}")
 
-# 2. Reverse each word of a string
+# 2. Reverse each word of a string # str1 = We are learning Python Programming
 print(f'{w1[::-1]} {w2[::-1]} {w3[::-1]} {w4[::-1]} {w5[::-1]}')
+
+
 
 
 
