@@ -90,3 +90,34 @@ else:
      print("The number is not divisible by 2 and 3")
 
 # The number is divisible by 2 and 3
+
+
+# write a python program to check the person voting permssion or not
+
+# input age
+age = int (input("enter age :"))
+
+# condition to check voting eligibility
+if age >= 18:
+    status = "eligible"
+else:
+    status = "not eligible"
+    print("you are", status," for vote")
+
+
+
+
+# Get input from the user
+number = int(input("Enter a number: "))
+
+# Check if the number is divisible by 2
+if number % 2 == 0:
+    # If divisible by 2, print the square of the number
+    print(f"The square of {number} is {number ** 2}")
+else:
+    # Otherwise, print the cube of the number
+    print(f"The cube of {number} is {number ** 3}")
+
+
+
+
