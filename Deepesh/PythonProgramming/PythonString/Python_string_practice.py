@@ -182,9 +182,183 @@ print(str_a[::2])  # Lann sFn
 print(str_a[::-1]) # nuF sI gninraeL
 
 # Home work
+
 # str1 = "We are learning Python Programming"
 # 1. swap first and last character of each word
 # result1 = "eW era gearninl nythoP  grogramminP"
 
 # 2. Reverse each word of the string.
 # output = "eW era gninrael nohtyP  gnimmargorP"
+
+
+# string home work
+str1 = "We are learning Python Programming"
+w1 = str1[0:2]
+w2= str1[3:6]
+w3 = str1[7:15]
+w4 = str1[16:22]
+w5 = str1[23:]
+
+print(w1, ":", w2, ":", w3, ":", w4, ":",w5)
+W1 = f"{w1[-1]}{w1[0]}"
+print(W1)
+W2 = f"{w2[-1]}{w2[1]}{w2[0]}"
+print(W2)
+W3 = f"{w3[-1]}{w3[1:-1]}{w3[0]}"
+W4 = f"{w4[-1]}{w4[1:-1]}{w4[0]}"
+W5 = f"{w5[-1]}{w5[1:-1]}{w5[0]}"
+
+result1 = f"{W1} {W2} {W3} {W4} {W5}"
+print(result1)
+
+# Reverse each word of the string.
+M1 = w1[::-1]
+M2 = w2[::-1]
+M3 = w3[::-1]
+M4 = w4[::-1]
+M5 = w5[::-1]
+result2 = f"{M1} {M2} {M3} {M4} {M5}"
+print("Result2 :", result2)
+
+print("_"*50)
+########################## Python String Methods ###############
+print(dir(str))
+
+"""
+'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 
+'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal',
+ 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 
+ 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 
+ 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip',
+  'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+"""
+
+#########
+# upper() and lower() method: These method convert upper case string to lower case
+#         and lower case string to upper case
+
+str_a = "Hello We Are Learning PYthon Programming"
+print(str_a.upper())
+# HELLO WE ARE LEARNING PYTHON PROGRAMMING
+
+print(str_a.lower())
+# hello we are learning python programming
+
+print(str_a[6].lower())
+
+print("_"*50)
+######
+# islower() and isupper() Method:
+# These methods check the given string is in lower case or upper case
+
+str_e = "HELLO GOOD MORNING"
+str_f = "good evening"
+print("is upper check str_e:", str_e.isupper()) # True
+print("is lower check str_e:", str_e.islower()) # False
+print("is lower check str_f:", str_f.islower()) # True
+
+print("_"*50)
+################
+# title() and istitle method:
+# title method convert first letter of each word into camel case and istitle check the given string
+# follows the rule of title sentence.
+str_g = "HeY hope yoU Are DOing Good"
+print("str_g :", str_g.title())
+output = str_g.title()
+# Hey Hope You Are Doing Good
+
+print("Istitle for str_g :", str_g.istitle())  # False
+print("istitle for output :", output.istitle())  # True
+
+print("_"*50)
+################
+# Replace Method: Replace method helps to update any character or substring in the given string.
+str_b = "Hello We Are Learning PYthon Programming"
+str_c = str_b.replace("W", "w")
+print(str_c)
+
+str_d = str_b.replace("PYthon", "JAVA")
+print(str_d)
+
+
+print("_"*50)
+# ################
+#  count() Method: This method count the occurrences of any character or substring in the given string
+
+str_j = "Lets Hope India will win the last Test India Match"
+print("count of l :", str_j.count("l")) # 3
+print("Count of India :", str_j.count("India")) # 2
+
+Total_character = len(str_j)
+print("Total character :", Total_character) # Total character : 50
+
+
+
+print("_"*50)
+# ################
+#  swapcase() Method: This method covert all the character from Upper to lower and lower to upper.
+str_k = "Lets HopE IndIa wiLL win the last Test India Match"
+print("swap case of str_k :", str_k.swapcase())
+# lETS hOPe iNDiA WIll WIN THE LAST tEST iNDIA mATCH
+
+
+print("_"*50)
+# Write a python program to get count of each character in the string.
+str_l = "Lets HopE IndIa wiLL win the last Test India Match"
+
+temp = "" # empty
+
+# loop over input string
+for char in str_l:
+    # check char is not in temp variable
+    if char not in temp:
+        # print the character and its count
+        print(char, str_l.count(char))
+        # add character to temp variable
+        temp = temp + char
+    else:
+        # continue if the character is repeated.
+        continue
+
+
+print("_"*50)
+# ################
+#  index() Method : This method return the index position of available sub-string or character.
+str_x = "Good Morning"
+print("index of M :", str_x.index("M")) # 5
+print("index of ing :", str_x.index("ing")) # 9
+
+# find the index of un-available string
+# print("index of ing :", str_x.index("MM")) # 9
+# It gives error and fail the program if the target sub-string in not available
+# ValueError: substring not found
+
+
+print("_"*50)
+############
+# find method : This method return the index position of character or sub-string if it is available or
+#               method will return -1 if the sub-string/character is not available
+
+str_q = "Hello Python Programming"
+print(str_q.find("Python")) # 6
+
+# output of not available data is expected  value -1
+print(str_q.find("Good")) # -1
+
+
+
+print("_"*50)
+############
+# split method: This method split the string with given delimeters or substring and return the list of words.
+
+str_p = "Python#Programming#Is#Easy#To#Learn"
+# split the string with #
+result = str_p.split("#")
+print("split result  :", result)
+# ['Python', 'Programming', 'Is', 'Easy', 'To', 'Learn']
+
+str_p = "Good Morning Learning is Fun"
+# split the string with space
+result2 = str_p.split(" ")
+print(result2)
+# ['Good', 'Morning', 'Learning', 'is', 'Fun']
