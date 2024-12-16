@@ -107,3 +107,84 @@ print(str_c[:-2]) # Python Programmi
 
 # print string except first and last character
 print(str_c[1:-1]) # ython Programmin
+
+#                   -30      19 -19   30
+str_d = "Very good evening, hope you are doing good"
+print(str_d[-19:30])
+
+
+print("_"*50)
+######## Rule2 str[initial_index:last_index: difference]  #######
+str_e = "We are Learning Program"
+
+print(str_e[2: 15: 1])  #  are Learning
+print(str_e[2: 15: 2])
+
+# r erig
+
+print(str_e[-3:-20: -1])#  rgorP gninraeL er
+
+#Q1: write a python program to solve this probml
+str1 = "Virat is best India Player"
+#. 1 print all value except first and last
+#. output =  "irat is best India Playe"
+
+# output2 =  "VViratt iiss bbestt IIndiaa PPlayerr"
+result1 = str1[1:-1]
+print(result1)
+
+# Q2:
+w1 = str1[0:5]
+w2 = str1[6:8]
+w3 = str1[9:13]
+w4 = str1[14:19]
+w5 = str1[20:]
+
+W1 = f"{w1[0]}{w1}{w1[-1]}"
+W2 = f"{w2[0]}{w2}{w2[-1]}"
+W3 = f"{w3[0]}{w3}{w3[-1]}"
+W4 = f"{w4[0]}{w4}{w4[-1]}"
+W5 = f"{w5[0]}{w5}{w5[-1]}"
+result2 = f"{W1} {W2} {W3} {W4} {W5}"
+print(result2)
+
+print("_"*50)
+#############################################
+# Rul3 str[:last index: difference]
+#1. If difference is positive then default initial index will be zero
+#2. If difference is negative the defailt initial index will be -1
+
+str1 = "Good Morning"
+
+# default initial index is zero as difference is positive
+print(str1[:8:1])  #Good Mor
+
+# default initial index is -1 as difference value is negative
+print(str1[:5:-1]) # gninro
+
+print(str1[:-6:1]) # Good M
+
+print(str1[:-6:-1]) # gninr
+
+
+print("_"*50)
+###################################################
+# RulE4 : str[:: difference]
+# 1. If difference is positive then default initial index will be zero and last index
+#    will be end of the string.
+
+#2.  If difference is negative then default initial index will be -1 and last index will
+#    will be begining of string
+
+str_a = "Learning Is Fun"
+print(str_a[::2])  # Lann sFn
+
+print(str_a[::-1]) # nuF sI gninraeL
+
+# Home work
+# str1 = "We are learning Python Programming"
+# 1. swap first and last character of each word
+# result1 = "eW era gearninl nythoP  grogramminP"
+
+# 2. Reverse each word of the string.
+# output = "eW era gninrael nohtyP  gnimmargorP"
