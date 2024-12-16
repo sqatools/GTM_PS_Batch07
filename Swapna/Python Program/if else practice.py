@@ -125,3 +125,7 @@ print ("*"*20)
 #     print("True")
 # else:
 #     print("False")
+
+str1 = "virat is best india Played"
+print(str1[1:-1])
+
