@@ -305,7 +305,6 @@ print("swap case of str_k :", str_k.swapcase())
 print("_"*50)
 # Write a python program to get count of each character in the string.
 str_l = "Lets HopE IndIa wiLL win the last Test India Match"
-
 temp = "" # empty
 
 # loop over input string
@@ -362,3 +361,64 @@ str_p = "Good Morning Learning is Fun"
 result2 = str_p.split(" ")
 print(result2)
 # ['Good', 'Morning', 'Learning', 'is', 'Fun']
+
+
+
+
+print("_"*50)
+############
+# strip method : This method helps to remove trailing spaces from given string.
+# Trailing space means, spaces that are available in the begining and end of string.
+
+str_c = "  Python Programming  "
+print(str_c)
+result1 = str_c.strip()
+print(result1)
+
+# remove right side space
+print(str_c.rstrip())
+
+# remove left side space
+print(str_c.lstrip())
+
+
+print("_"*50)
+############
+# join() method : This help to join string with any word/character/number/special character
+
+str_d = "Programming"
+
+result = "-".join(str_d)
+print("join result :", result) # P-r-o-g-r-a-m-m-i-n-g
+
+result2 = "%$^$#".join(str_d)
+print("join result2 :", result2) # P%$^$#r%$^$#o%$^$#g%$^$#r%$^$#a%$^$#m%$^$#m%$^$#i%$^$#n%$^$#g
+
+print("_"*50)
+##########################
+# isnumeric method : This method check the given string only contains numbers
+
+str_t = "67887678"
+str_k = "2432 Hello"
+print("Check all the values are numeric  str_t :", str_t.isnumeric()) # True
+print("Check all the values are numeric str_k :", str_k.isnumeric()) # False
+
+#isalpha : This method check the target string contains only alhabates.
+
+str_a = "Hello"
+str_b = "Python 123"
+
+print("check alphabtes str_a :", str_a.isalpha()) # True
+print("check alphabtes str_b :", str_b.isalpha()) # False
+
+# isalnum : This method check the given string contains alphanumeric value
+str_p = "Python123"
+str_q = "Hello 345"
+print("str_p contains alphanumeric value :", str_p.isalnum()) # True
+print("str_q contains alphanumeric value :", str_q.isalnum()) # False
+
+#isspace : This method return true if string only contains space.
+str_x = "   "
+str_y = "H E L L O"
+print("set_x is contains space  :", str_x.isspace()) # True
+print("set_y is contains space  :", str_y.isspace()) # False
