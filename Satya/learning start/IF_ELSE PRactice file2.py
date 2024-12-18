@@ -17,7 +17,7 @@
 #     print("28/29")
 from operator import truediv
 
-import bill
+
 
 print()
 # 35). Python program to check whether a triangle is equilateral or not. An equilateral triangle is a triangle in which all three sides are equal.
