@@ -326,7 +326,7 @@ w4=str1[14:19]
 w5=str1[20:]
 print(w1[0]+w1+" "+w2[0]+w2+" "+w3[0]+w3+" "+w4[0]+w4+" "+w5[0]+w5)
 '''
-
+'''
 # str1 = We are learning Python Programming
 # 1. swap first and last character of each word
 # 2. Reverse each word of a string
@@ -339,3 +339,43 @@ w4=str1[16:22]
 w5=str1[23:]
 print(f"{w1[::-1]} {w2[::-1]} {w3[-1]}{w3[1:-1]}{w3[0]} {w4[-1]}{w4[1:-1]}{w4[0]} {w5[-1]}{w5[1:-1]}{w5[0]}")
 print(f'{w1[::-1]} {w2[::-1]} {w3[::-1]} {w4[::-1]} {w5[::-1]}')
+'''
+
+#4. Write a python program to get email and phone number from given string
+str1 = "Hello python 8989898787 test@gail.com 5654645645 user2@tahoo.com Hope doing good"
+
+wordlist = str1.split(" ")
+at = "@"
+phone = ""
+email = ""
+#print(wordlist)
+for word in wordlist:
+    if word.isnumeric() and len(word) == 10:
+        phone = phone + word + " "
+    elif at in word:
+        email = email + word + " "
+
+print("Phone numbers: ", phone)
+print("email id: ", email)
+
+
+
+#5. write a python program to second largest word from given string.
+str_p = "Hello We Are Learning Python"
+output = "Python"
+maxlen = 0
+nextlen = 0
+longword = ""
+nextword = ""
+wordlist = str_p.split(" ")
+
+for word in wordlist:
+    wordlen = len(word)
+    if wordlen > maxlen:
+        maxlen = wordlen
+        longword = word
+    elif maxlen > wordlen >nextlen:
+        nextlen = wordlen
+        nextword = word
+
+print("Second longest word: ", nextword)
