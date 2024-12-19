@@ -85,34 +85,146 @@ b = "b"
 a = "a"
 p = "p"
 r = "r"
-print(str5[1:-1])
+# print(str5[1:-1])
+#
+# result4 = f"{v}virat{t} {i}is{s} {b}best{t} {i}india{a} {p}player{r}"
+# print(result4)
+#
+#
+# v = "virat"
+# i = "is"
+# b= "best"
+# p = "player"
+#
+# result6 = f"v{v}t i{i}s b{b}t p{p}r"
+# print(result6)
+#
+#
+# str = "i am a good boy"
+#
+# w1 = str[0:1]
+# w2 = str[2:3]
+# w3 = str[4:5]
+# w4 = str[6:10]
+# w5 = str[11:14]
+#
+# W2 = f"{w2[0]}{w2}{w2[-1]}"
+# W3 = f"{w3[0]}{w3}{w3[-1]}"
+# W4 = f"{w4[0]}{w4}{w4[-1]}"
+# W5 = f"{w5[0]}{w5}{w5[-1]}"
+#
+# result7 = f"{w1} {W2} {W3} {W4} {W5}"
+# print(result7)
 
-result4 = f"{v}virat{t} {i}is{s} {b}best{t} {i}india{a} {p}player{r}"
-print(result4)
+print()
+print("-"*50)
+str7 = "we are learning python programming"
+
+print(str7[0:34:2])
+print(str7[::-1])
+
+w1 = str7[0:2]
+w2 = str7[3:6]
+w3 = str7[7:15]
+w4 = str7[16:22]
+w5 = str7[23:]
+
+result2 = f"{w1} {w2}{w3}{w4}{w5}"
+print(result2)
+
+W1 = f"{w1[::-1]}"
+W2 = f"{w2[::-1]}"
+W3 = f"{w3[::-1]}"
+W4 = f"{w4[::-1]}"
+W5 = f"{w5[::-1]}"
+
+result5 = f"{W1} {W2} {W3} {W4} {W5}"
+
+print(result5)
+
+##############
+
+print(dir(str))
 
 
-v = "virat"
-i = "is"
-b= "best"
-p = "player"
+# # 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format',
+ #'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal',
+ #'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable',
+# # 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip',
+# # 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace',
+# # 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split',
+# # 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate',
+#upper', 'zfill'
+#
 
-result6 = f"v{v}t i{i}s b{b}t p{p}r"
-print(result6)
+print()
+print("-"*50)
+list1 = "Hello This Is SatYa"
+
+print(list1.upper())
+print(list1.lower())
+print(list1[3].upper())
+print(list1[6].lower())
+
+str_b = "hello i am learning python"
+
+str_c = str_b.replace("i", "we")
+print(str_c)
+
+str_d = "hai"
+str_e = str_d.islower()
+print(str_d.upper()) # HAI
+print(str_e) # true
 
 
-str = "i am a good boy"
 
-w1 = str[0:1]
-w2 = str[2:3]
-w3 = str[4:5]
-w4 = str[6:10]
-w5 = str[11:14]
+print()
+print("-"*50)
 
-W2 = f"{w2[0]}{w2}{w2[-1]}"
-W3 = f"{w3[0]}{w3}{w3[-1]}"
-W4 = f"{w4[0]}{w4}{w4[-1]}"
-W5 = f"{w5[0]}{w5}{w5[-1]}"
+str_f = "HellO I AM leArning pythOn"
 
-result7 = f"{w1} {W2} {W3} {W4} {W5}"
-print(result7)
+output = str_f.title()
+print(str_f.title()) # Hello I Am Learning Python
+
+print(str_f.istitle()) # False
+print(output.istitle()) # True
+
+print(str_f.upper()) # HELLO I AM LEARNING PYTHON
+
+print(str_f.lower()) # hello i am learning python
+
+print(str_f.replace("I", "we")) # HellO we AM leArning pythOn
+
+
+print()
+print("-"*50)
+
+str_g = ("hello my name is satya and i am from"
+         " visakapatnam and my father name is raju and my mother name is satyavathi")
+
+print(str_g.count("my"))  # 3
+print(str_g.count("a"))  #18
+print(len(str_g))  # 109
+
+
+print()
+print("-"*50)
+
+str_h = " hAi I aM From AndHra"
+
+print(str_h.swapcase()) # HaI i Am fROM aNDhRA
+
+
+str_i = "hi my name is satya"
+temp = ""
+for i in str_i:
+    if i not in temp:
+        print(i, end="")
+        print(i, str_i.count(i))
+        temp = temp+i
+
+
+
+
+
 
