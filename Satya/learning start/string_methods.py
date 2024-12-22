@@ -222,6 +222,64 @@ for i in str_i:
         print(i, end="")
         print(i, str_i.count(i))
         temp = temp+i
+print(str_i.index("i"))
+print(str_i.index("a"))
+print(str_i.find("is"))
+
+print(str_i.split(" ")) # ['hi', 'my', 'name', 'is', 'satya']
+
+
+print()
+print("-"*50)
+#5. write a python program to second largest word from given string.
+str_p = "Hello We Are Learning Python"
+output = "Python"
+
+max_len = 0
+longest_word = " "
+word_list = str_p.split()
+
+for word in word_list:
+    word_len = len(word)
+    if word_len > max_len:
+        max_len = word_len
+        longest_word = max_len
+    else:
+        continue
+
+
+print(longest_word)
+
+
+satya = "hello i am learning python but its very difficult to understand for me"
+
+max = 0
+long = ""
+satya_list = satya.split()
+
+for i in satya_list:
+    i_len = len(i)
+    if i_len > max:
+        max = i_len
+        long = max
+    else:
+        continue
+print(long)
+
+print("-"*50)
+str10 = ("satya 9490570891 chsatya@gmail.com ")
+
+str10_list = str10.split()
+
+for word in str10_list:
+    if "@" in word:
+        print("mail id:", word)
+
+satya1 = "123dsesgse"
+print(satya1.isalnum()) # True
+
+
+
 
 
 
