@@ -355,6 +355,8 @@ for word in wordlist:
     elif at in word:
         email = email + word + " "
 
+
+
 print("Phone numbers: ", phone)
 print("email id: ", email)
 
@@ -379,3 +381,18 @@ for word in wordlist:
         nextword = word
 
 print("Second longest word: ", nextword)
+
+#program : write a python program provide the shopping bill amount from list of items purchased
+list3 = [('tshirt', 300),
+         ('lower', 400),
+         ('Jeans', 1000),
+         ('Jacket', 2000),
+         ('Watch', 4000)]
+# result provide the total bill amount
+
+result = 0
+
+for i in list3:
+    result = result + i[-1]
+
+print(result)
