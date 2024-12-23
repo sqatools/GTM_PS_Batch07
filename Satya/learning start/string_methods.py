@@ -222,6 +222,112 @@ for i in str_i:
         print(i, end="")
         print(i, str_i.count(i))
         temp = temp+i
+print(str_i.index("i"))
+print(str_i.index("a"))
+print(str_i.find("is"))
+
+print(str_i.split(" ")) # ['hi', 'my', 'name', 'is', 'satya']
+
+
+print()
+print("-"*50)
+#5. write a python program to second largest word from given string.
+str_p = "Hello We Are Learning Python"
+output = "Python"
+
+max_len = 0
+longest_word = " "
+word_list = str_p.split()
+
+for word in word_list:
+    word_len = len(word)
+    if word_len > max_len:
+        max_len = word_len
+        longest_word = max_len
+    else:
+        continue
+
+
+print(longest_word)
+
+
+satya = "hello i am learning python but its very difficult to understand for me"
+
+# max = 0
+# long = ""
+# satya_list = satya.split()
+#
+# for i in satya_list:
+#     i_len = len(i)
+#     if i_len > max:
+#         max = i_len
+#         long = max
+#     else:
+# #         continue
+# print(long)
+#
+# print("-"*50)
+# str10 = ("satya 9490570891 chsatya@gmail.com ")
+#
+# str10_list = str10.split()
+#
+# for word in str10_list:
+#     if "@" in word:
+#         print("mail id:", word)
+#
+# satya1 = "123dsesgse"
+# print(satya1.isalnum()) # True
+
+
+print("-"*50)
+# 6). Python string program to test whether a passed letter is a vowel or consonant.
+
+str6 = "A"
+voweles = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
+
+for char in str6:
+    if char in voweles:
+        print("it is a vowel :", char)
+    else:
+        print("it is a consonent :", char)
+
+
+print("-"*50)
+# 7). Find the longest and smallest word in the input string.
+
+str7 = str("satya santhi ramakrishna prasad sai loki viswa")
+str7_len = str7.split()
+
+longest_word = max(str7_len, key = len)
+smallest_word = min(str7_len, key = len)
+
+print(longest_word)
+print(smallest_word)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
