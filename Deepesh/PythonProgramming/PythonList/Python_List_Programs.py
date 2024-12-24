@@ -85,3 +85,70 @@ output = 77
 # and negative to right side of the list
 list2 = [4, 7, -2, 8, -11, 44, -7, -22]
 # output = [4, 7, 8, 44, -2, -11, -7, -22]
+
+print("_"*50)
+# Program: write a  python program to find out all the palimdrome word from given string.
+str_a = "Hello OPO We Are AAAoAAA Learning HellolleH Python"
+word_list = str_a.split(" ")
+print(word_list)
+for word in word_list:
+    # check for palimdrome word
+    if word == word[::-1]:
+        # print only palimdrome word
+        print(word)
+    else:
+        continue
+
+"""
+OPO
+AAAoAAA
+HellolleH
+"""
+
+
+print("_"*50)
+# write a python program to manage a fruit to calculate bill amount and update inventory
+# [fruit_ name, fruit_stock, fruit_price]
+fruit_items = [['Apple', 100, 20], ['Banana', 50, 10], ['Mango', 200, 75],
+               ['Cherry', 150, 40], ['watermelon', 20, 100], ['PinaApple', 75, 150]]
+
+cust_purchase_list = [['Apple', 5], ['Banana', 10], ['watermelon', 2]]
+total_bill = 0
+
+# 1. Calculate the bill
+# 2. update inventory
+
+for cust_item in cust_purchase_list:
+    for stock_item in fruit_items:
+        if cust_item[0] == stock_item[0]:
+            # get fruit name from customer purchase
+            fruit_name = cust_item[0]
+            # calculate bill amount of each fruit
+            fruit_bill = cust_item[1]*stock_item[2]
+            # get updated the stock item value
+            updated_stock = stock_item[1] - cust_item[1]
+            # update the stock item value in the stock_item list
+            stock_item[1] = updated_stock
+            # add fruit item bill in total amount
+            total_bill = total_bill + fruit_bill
+            print(fruit_name, ":",cust_item[1],  ":", fruit_bill)
+
+print("_"*50)
+print("Total bill amount :", total_bill)
+
+print(fruit_items)
+
+
+# HW : Write a Python Program to create a employee management system with the help of list structure.
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 543534534, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 543534543, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 443454322, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 789788888, 800000],
+]
+# 1. get employee details with employee ID
+# 2. update employee details
+# 3. Add new employee
+# 4. removed employee details with employee ID.

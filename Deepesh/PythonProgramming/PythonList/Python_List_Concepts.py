@@ -366,7 +366,7 @@ print("square value :", square)
 # [16, 36, 49, 4, 64, 1, 81]
 
 print("_"*50)
-################ Get Max, Min and Sum of the values ###############
+########## Get Max, Min and Sum of the values #########
 list_u = [55, 66, 22, 12, 56, 77]
 
 print("Max value :", max(list_u))
