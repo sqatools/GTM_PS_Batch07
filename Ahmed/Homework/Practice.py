@@ -340,7 +340,7 @@ w5=str1[23:]
 print(f"{w1[::-1]} {w2[::-1]} {w3[-1]}{w3[1:-1]}{w3[0]} {w4[-1]}{w4[1:-1]}{w4[0]} {w5[-1]}{w5[1:-1]}{w5[0]}")
 print(f'{w1[::-1]} {w2[::-1]} {w3[::-1]} {w4[::-1]} {w5[::-1]}')
 '''
-
+'''
 #4. Write a python program to get email and phone number from given string
 str1 = "Hello python 8989898787 test@gail.com 5654645645 user2@tahoo.com Hope doing good"
 
@@ -395,4 +395,34 @@ result = 0
 for i in list3:
     result = result + i[-1]
 
-print(result)
+print("Total Bill Amount:", result)
+'''
+# HW1 :  write a python program to second last max value from given list
+list1 = [4, 6, 22, 77, 23, 44, 66, 100]
+output = 77
+max = 0
+next=0
+for i in list1:
+    if i > max:
+        next=max
+        max=i
+    elif max > i > next:
+        next = i
+print("second max value: ",next)
+
+
+# HW2 :  write a python program to move all positive value in left side of the list
+# and negative to right side of the list
+list2 = [4, 7, -2, 8, -11, 44, -7, -22]
+# output = [4, 7, 8, 44, -2, -11, -7, -22]
+list2a = []
+list2b = []
+
+for i in list2:
+    if i > 0:
+        list2a.append(i)
+    else:
+        list2b.append(i)
+
+Result = list2a + list2b
+print("output =", Result)
