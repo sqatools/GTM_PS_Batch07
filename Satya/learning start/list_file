@@ -1,0 +1,10 @@
+  # program : write a python program provide the shopping bill amount from list of items purchased
+
+list3 = [('tshirt', 300),
+         ('lower', 400),
+         ('Jeans', 1000),
+         ('Jacket', 2000),
+         ('Watch', 4000)]
+# result provide the total bill amount
+
+list4 = ["rgr

@@ -86,6 +86,11 @@ output = 77
 list2 = [4, 7, -2, 8, -11, 44, -7, -22]
 # output = [4, 7, 8, 44, -2, -11, -7, -22]
 
+
+##########################################################
+
+
+
 print("_"*50)
 # Program: write a  python program to find out all the palimdrome word from given string.
 str_a = "Hello OPO We Are AAAoAAA Learning HellolleH Python"
