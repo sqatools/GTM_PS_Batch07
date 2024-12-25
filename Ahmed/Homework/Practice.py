@@ -397,6 +397,7 @@ for i in list3:
 
 print("Total Bill Amount:", result)
 '''
+'''
 # HW1 :  write a python program to second last max value from given list
 list1 = [4, 6, 22, 77, 23, 44, 66, 100]
 output = 77
@@ -426,3 +427,83 @@ for i in list2:
 
 Result = list2a + list2b
 print("output =", Result)
+
+# HW : Write a Python Program to create a employee management system with the help of list structure.
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+# 1. get employee details with employee ID
+x = input("Enter the employee ID: ")
+for i in employee_details :
+    if i[0] == x :
+        print("Employee Name: ", i[1])
+        print("Employee email ID: ", i[2])
+        print("Employee Location: ", i[3])
+        print("Employee Phone Number: ", i[4])
+        print("Employee Salary: ", i[5])
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+# 2. update employee details
+y = input("Enter employee ID you want to update: ")
+z = ['empid', 'Name', 'emailid', 'Location', 'Phone','Salary']
+
+detail = input("Enter the employee detail you want to update: ")
+update = input("Enter the updated detail: ")
+for j in employee_details:
+    for k in range(len(z)):
+        if j[0] == y:
+            if detail == z[k]:
+                j[k] = update
+
+print(employee_details)
+
+# 3. Add new employee
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+
+Empid = input("Enter Employee ID: ")
+Name = input("Enter Employee Name: ")
+emailid = input("Enter Employee email ID: ")
+Location = input("Enter Employee Location: ")
+Phone = int(input("Enter Employee phone number: "))
+Salary = int(input("Enter Employee Salary: "))
+
+Newlist = [Empid, Name, emailid, Location, Phone, Salary]
+employee_details.extend([Newlist])
+print(employee_details)
+'''
+# 4. removed employee details with employee ID.
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+r = input("Enter the Employee ID to remove details: ")
+for i in employee_details:
+    if i[0] == r:
+        employee_details.remove(i)
+    else
+        print("Enter valid employee ID")
+
+print(employee_details)
+
+
