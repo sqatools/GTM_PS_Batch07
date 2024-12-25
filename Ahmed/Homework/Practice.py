@@ -501,8 +501,7 @@ r = input("Enter the Employee ID to remove details: ")
 for i in employee_details:
     if i[0] == r:
         employee_details.remove(i)
-    else
-        print("Enter valid employee ID")
+
 
 print(employee_details)
 
