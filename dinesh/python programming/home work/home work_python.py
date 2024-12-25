@@ -41,3 +41,19 @@ print("Simple Interest is : ", SI) #140000.0
 CI = A*(1+(R/100))**B - C
 
 print ("Compound Interest is: ", CI) #1783213.0896511993
+
+
+
+
+# Get input from the user
+number = int(input("Enter a number: "))
+
+# Check if the number is divisible by 2
+if number % 2 == 0:
+    # If divisible by 2, print the square of the number
+    print(f"The square of {number} is {number ** 2}")
+else:
+    # Otherwise, print the cube of the number
+    print(f"The cube of {number} is {number ** 3}")
+
+

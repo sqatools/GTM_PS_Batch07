@@ -262,7 +262,7 @@ Up to 100 units rs 0.75/unit
 Up to 250 units rs 1.25/unit
 above 250 rs 1.50/unit
 an additional surcharge of 17% is added to the bill
-'''
+
 units = int(input("Enter the total units: "))
 Amount = 0
 
@@ -278,3 +278,231 @@ for i in range(0,units+1):
 
 Total_Amount = Amount + (Amount*0.17)
 print("The final bill is ", Total_Amount)
+'''
+# 16). Python Loops program to find the sum of all natural numbers between 1 to n using python.
+# sum of all even and odd numbers between 1 to n using python.
+'''
+n = int(input("Enter the number: "))
+sum = 0
+even = 0
+odd = 0
+
+for i in range(1,n+1):
+    sum+=i
+
+
+for j in range(1,n+1):
+    if j%2 == 0:
+        even+=j
+    else:
+        odd+=j
+print("Sum of even values: ",even)
+print("Sum of odd values: ",odd)
+print("Sum of all values: ",sum)
+'''
+'''
+num = int(input("Enter a number: "))
+count = 1
+
+for i in range(2, num):
+    if num%i == 0:
+        count += 1
+
+print(count)
+if count > 1:
+    print("It is not prime number")
+else:
+    print("It is a prime number")
+'''
+'''
+str1 = "Virat is best India player"
+
+print(str1[1:-1])
+
+w1=str1[0:5]
+w2=str1[6:9]
+w3=str1[9:13]
+w4=str1[14:19]
+w5=str1[20:]
+print(w1[0]+w1+" "+w2[0]+w2+" "+w3[0]+w3+" "+w4[0]+w4+" "+w5[0]+w5)
+'''
+'''
+# str1 = We are learning Python Programming
+# 1. swap first and last character of each word
+# 2. Reverse each word of a string
+
+str1 = "We are learning Python Programming"
+w1=str1[0:2]
+w2=str1[3:6]
+w3=str1[7:15]
+w4=str1[16:22]
+w5=str1[23:]
+print(f"{w1[::-1]} {w2[::-1]} {w3[-1]}{w3[1:-1]}{w3[0]} {w4[-1]}{w4[1:-1]}{w4[0]} {w5[-1]}{w5[1:-1]}{w5[0]}")
+print(f'{w1[::-1]} {w2[::-1]} {w3[::-1]} {w4[::-1]} {w5[::-1]}')
+'''
+'''
+#4. Write a python program to get email and phone number from given string
+str1 = "Hello python 8989898787 test@gail.com 5654645645 user2@tahoo.com Hope doing good"
+
+wordlist = str1.split(" ")
+at = "@"
+phone = ""
+email = ""
+#print(wordlist)
+for word in wordlist:
+    if word.isnumeric() and len(word) == 10:
+        phone = phone + word + " "
+    elif at in word:
+        email = email + word + " "
+
+
+
+print("Phone numbers: ", phone)
+print("email id: ", email)
+
+
+
+#5. write a python program to second largest word from given string.
+str_p = "Hello We Are Learning Python"
+output = "Python"
+maxlen = 0
+nextlen = 0
+longword = ""
+nextword = ""
+wordlist = str_p.split(" ")
+
+for word in wordlist:
+    wordlen = len(word)
+    if wordlen > maxlen:
+        maxlen = wordlen
+        longword = word
+    elif maxlen > wordlen >nextlen:
+        nextlen = wordlen
+        nextword = word
+
+print("Second longest word: ", nextword)
+
+#program : write a python program provide the shopping bill amount from list of items purchased
+list3 = [('tshirt', 300),
+         ('lower', 400),
+         ('Jeans', 1000),
+         ('Jacket', 2000),
+         ('Watch', 4000)]
+# result provide the total bill amount
+
+result = 0
+
+for i in list3:
+    result = result + i[-1]
+
+print("Total Bill Amount:", result)
+'''
+'''
+# HW1 :  write a python program to second last max value from given list
+list1 = [4, 6, 22, 77, 23, 44, 66, 100]
+output = 77
+max = 0
+next=0
+for i in list1:
+    if i > max:
+        next=max
+        max=i
+    elif max > i > next:
+        next = i
+print("second max value: ",next)
+
+
+# HW2 :  write a python program to move all positive value in left side of the list
+# and negative to right side of the list
+list2 = [4, 7, -2, 8, -11, 44, -7, -22]
+# output = [4, 7, 8, 44, -2, -11, -7, -22]
+list2a = []
+list2b = []
+
+for i in list2:
+    if i > 0:
+        list2a.append(i)
+    else:
+        list2b.append(i)
+
+Result = list2a + list2b
+print("output =", Result)
+
+# HW : Write a Python Program to create a employee management system with the help of list structure.
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+# 1. get employee details with employee ID
+x = input("Enter the employee ID: ")
+for i in employee_details :
+    if i[0] == x :
+        print("Employee Name: ", i[1])
+        print("Employee email ID: ", i[2])
+        print("Employee Location: ", i[3])
+        print("Employee Phone Number: ", i[4])
+        print("Employee Salary: ", i[5])
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+# 2. update employee details
+y = input("Enter employee ID you want to update: ")
+z = ['empid', 'Name', 'emailid', 'Location', 'Phone','Salary']
+
+detail = input("Enter the employee detail you want to update: ")
+update = input("Enter the updated detail: ")
+for j in employee_details:
+    for k in range(len(z)):
+        if j[0] == y:
+            if detail == z[k]:
+                j[k] = update
+
+print(employee_details)
+
+# 3. Add new employee
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+
+Empid = input("Enter Employee ID: ")
+Name = input("Enter Employee Name: ")
+emailid = input("Enter Employee email ID: ")
+Location = input("Enter Employee Location: ")
+Phone = int(input("Enter Employee phone number: "))
+Salary = int(input("Enter Employee Salary: "))
+
+Newlist = [Empid, Name, emailid, Location, Phone, Salary]
+employee_details.extend([Newlist])
+print(employee_details)
+'''
+# 4. removed employee details with employee ID.
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+r = input("Enter the Employee ID to remove details: ")
+for i in employee_details:
+    if i[0] == r:
+        employee_details.remove(i)
+
+
+print(employee_details)
+
+
