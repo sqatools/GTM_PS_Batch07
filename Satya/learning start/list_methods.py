@@ -70,7 +70,31 @@ for num in list_A:
     product *= num
 print(product)
 
+# 5). Python program to find the minimum and maximum elements from the list.
 
+list_h = [3, 5, 77, 88, 55, 766]
+max_lent = max(list_h)
+min_lent = min(list_h)
+print(max_lent)
+print(min_lent)
+
+
+print("-"*50)
+# 6). Python program to differentiate even and odd elements from the given list.
+
+list_i =  [2, 3, 4, 5, 6, 7, 8, 9]
+even = ""
+odd = ""
+for val in list_i:
+    if val%2 == 0:
+
+        print("even number :", val)
+    elif val%2 != 0:
+        print("odd number :", val)
+
+# 7). Python program to remove all duplicate elements from the list.
+
+list_j = [3, 5, 7, 768, 3, 6, 5, 7, 57, 9, 10]
 
 
 

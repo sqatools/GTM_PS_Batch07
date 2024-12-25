@@ -1,4 +1,6 @@
 # program : write a list program to remove all the duplicated from given list
+from Deepesh.PythonProgramming.PythonList.Python_List_Concepts import list_Y
+
 list1 = [4, 6, 8, 4, 8, 2, 11, 5, 6]
 # empty list
 result = []
@@ -85,6 +87,151 @@ output = 77
 # and negative to right side of the list
 list2 = [4, 7, -2, 8, -11, 44, -7, -22]
 # output = [4, 7, 8, 44, -2, -11, -7, -22]
+
+print("-"*50)
+############### append, insert #########
+list_k = [2, 4, 6, 8, 9, 4,]
+list_k.insert(-2, 300)
+list_k.append(100)
+list_k.append(500)
+list_k.insert(2, 200)
+list_k.insert(-2, 54)
+print(list_k)
+
+####### extend #####
+
+list_l = [ "sar", 66, 43, 56, "fsd"]
+list_m = ["tya", 44, 3543]
+list_l.extend(list_m)
+print(list_l)
+
+list_m.extend(list_l)
+print(list_m)
+
+print("-"*50)
+
+list_n = [4, 5, 6, 7, 7, 9]
+list_o = ["sun", "moon", "dad", 5, 90, 123]
+result6 = list_n + list_o
+print(result6)
+ # 4, 5, 6, 7, 7, 9, 'sun', 'moon', 'dad', 5, 90, 123]
+
+###### multiply list #####
+
+result7 = list_o*4
+print(result7)
+# ['sun', 'moon', 'dad', 5, 90, 123, 'sun', 'moon', 'dad', 5, 90, 123, 'sun', 'moon', 'dad', 5, 90, 123, 'sun', 'moon', 'dad', 5, 90, 123]
+
+print("-"*50)
+
+list_p = [76, 35, 87, 57, 87, 33, 56, 57, 33]
+list_p.remove(87)
+#
+list_p.pop(-2)
+
+print(list_p)
+# [76, 35, 57, 87, 33, 56, 33]
+pv1 = (list_p.pop())
+print(pv1) # 33
+
+
+print("-"*50)
+
+list_q = [2, 4, 9, 7, 7, 10,8]
+list_q.clear()
+print(list_q) # []
+
+
+
+list_r = [2, 4, 9, 7, 7, 10,8, 10, 7, 12, 13]
+del list_r[3:5]
+print(list_r)
+
+print(list_r.count(10))
+print(list_r.index(9))
+
+print("-"*50)
+####### sort ######
+
+list_s = [67.0, 4., 345, 35, 35, 35, 2, 45, 22]
+list_s.sort()
+print(list_s)
+# [2, 4.0, 22, 35, 35, 35, 45, 67.0, 345]
+list_s.reverse()
+print(list_s)
+# [345, 67.0, 45, 35, 35, 35, 22, 4.0, 2]
+
+
+reversed(list_s)
+print(list_s)
+
+print("-"*50)
+##### sorted #######
+
+list_t = [ 34, 54, 65, 12, 897,345, 768, 33243, 987,24323]
+
+print(list(sorted(list_t)))
+# [12, 34, 54, 65, 345, 768, 897, 987, 24323, 33243]
+print(list(sorted(list_t, reverse=True)))
+# [33243, 24323, 987, 897, 768, 345, 65, 54, 34, 12]
+print(list_t)
+# [34, 54, 65, 12, 897, 345, 768, 33243, 987, 24323]
+print(sorted(list_t))
+# [12, 34, 54, 65, 345, 768, 897, 987, 24323, 33243]
+
+
+###### replace ########
+print("-"*50)
+list_v = [33, 44 ,55, 54, 76, 87]
+list_v[3] = 56
+print(list_v)
+# [33, 44, 55, 56, 76, 87]
+
+list_v[:2] = [52, 53, 54]
+print(list_v)
+# [52, 53, 54, 55, 56, 76, 87]
+
+list_abc = [1, 2, 3, 4, 5]
+list_abd = list_abc
+list_abd.append(6)
+print(list_abc)
+# [1, 2, 3, 4, 5, 6]
+
+list_y = ["a", "b", "c"]
+list_z = list_y.copy()
+list_z.append("d")
+print(list_z)
+# [1, 2, 3, 4, 5, 6]
+print(list_y)
+# ['a', 'b', 'c']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ##########################################################
