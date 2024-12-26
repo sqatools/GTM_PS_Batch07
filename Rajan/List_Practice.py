@@ -1,5 +1,5 @@
 my_list = [1, 2, 3, 4, 2, 5, 3, 6, 1]
-unique_list = list(set(my_list))
+unique_list = s_list(set(my_list))
 print("list after removing duplicates:", unique_list)
 
 print("-"*50)
@@ -38,4 +38,6 @@ list1.remove(4)
 print(list1)
 
 print("-"*50)
-
+s_list = [1, 2, 3, 4, 5]
+total_sum = sum(s_list)
+print("Sum of all elements: ", total_sum)
