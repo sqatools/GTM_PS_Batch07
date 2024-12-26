@@ -57,4 +57,30 @@ print("result :", result)
 # reversed function
 result2 = tuple(reversed(tup_a))
 print("reverse result :", result2)
+
 # (3, 8, 3, 7, 3, 6, 3)
+
+print("_"*50)
+######## Max, Min and sum function ##############
+tup_q = (44, 55, 77, 11, 22, 78, 34, 9)
+
+print("Max value :", max(tup_q)) # Max value : 78
+print("Mini value :", min(tup_q)) # Mini value : 9
+print("Sum value :", sum(tup_q)) # Sum value : 330
+
+
+####################################
+# program : write a python to calculate the factorial of all the given numbers.
+tup_11 = (3, 6, 8, 5, 12, 4)
+# output = factorials list
+output = []
+
+for val in tup_11:
+    fact = 1
+    for i in range(val, 0, -1):
+        fact = fact*i
+
+    output.append(fact)
+
+print("Factorial output :", output)
+
