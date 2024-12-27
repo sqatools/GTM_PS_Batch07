@@ -487,7 +487,7 @@ Salary = int(input("Enter Employee Salary: "))
 Newlist = [Empid, Name, emailid, Location, Phone, Salary]
 employee_details.extend([Newlist])
 print(employee_details)
-'''
+
 # 4. removed employee details with employee ID.
 
 employee_details = [
@@ -504,5 +504,24 @@ for i in employee_details:
 
 
 print(employee_details)
+'''
+'''
+#2). Python Dictionary program to print the square of all values in a dictionary.
+Input = {'a': 5,'b' : 3, 'c' :6, 'd' : 8 }
+
+
+for k1,v1 in Input.items():
+    print(k1 ,":", v1**2)
+
+'''
+#3). Python Dictionary program to move items from dict1 to dict2.
+dict1 = {'name': 'john', 'city': 'Landon', 'country': 'UK'}
+dict2 = {}
+
+for k1,v1 in dict1.items():
+    dict2[k1] = v1
+dict1.clear()
+print("dict1 :", dict1)
+print("dict2 :", dict2)
 
 
