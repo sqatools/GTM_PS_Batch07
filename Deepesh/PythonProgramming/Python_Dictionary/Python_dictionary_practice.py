@@ -346,6 +346,59 @@ it_company = {
         ]
     }
 }
+print("_"*50)
+from pprint import pprint
+pprint(it_company['HR']['Payroll HR'][1]['phone']) # 987-654-3215
 
+# get all the employee details
+# get specific employee details with their name
+
+# # get all the employee details
+for k1, v1 in it_company.items():
+    #print(k1, ":", v1)
+    for k2, v2 in v1.items():
+        #print(k2,":", v2)
+        if isinstance(v2, list):
+            for data in v2:
+                print(data)
+        elif isinstance(v2, dict):
+            for k3, v3 in v2.items():
+                #print(k3, ":", v3)
+                for data in v3:
+                    print(data)
+
+
+
+print("_"*50)
+
+# get specific employee details with their name
+emp_name = 'Sameer Ahuja'
+mobile_no = ''
+
+for k1, v1 in it_company.items():
+    #print(k1, ":", v1)
+    for k2, v2 in v1.items():
+        #print(k2,":", v2)
+        if isinstance(v2, list):
+            for data in v2:
+                #print(data)
+                if data['name'] == emp_name or data['phone'] == mobile_no:
+                    #print(data)
+                    print(f"Name: {data['name']}\nEmail: {data['email']} \nPhone: {data['phone']}")
+
+        elif isinstance(v2, dict):
+            for k3, v3 in v2.items():
+                #print(k3, ":", v3)
+                for data in v3:
+                    #print(data)
+                    if data['name'] == emp_name or data['phone'] == mobile_no:
+                        #print(data)
+                        print(f" Name: {data['name']}\nEmail: {data['email']} \nPhone: {data['phone']}")
+
+
+# HW :
+# Update Employee Details
+# Delete Employee Details
+# Add New employee Details
 
 
