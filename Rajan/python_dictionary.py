@@ -107,8 +107,7 @@ it_company = {
     }
 }
 print("_"*50)
-# Update Employee Details
-# Delete Employee Details
+
 # Add New employee Details
 def add_employee(department, role, new_employee):
     for k1, v1 in it_company.items():
@@ -120,4 +119,44 @@ def add_employee(department, role, new_employee):
                     return
 new_employee = {'name': 'Rajan T', 'email': 'rajan@email.com', 'phone': '07824397633'}
 add_employee('HR', 'payroll HR', new_employee)
+print("_"*50)
 
+# Update Employee Details
+def update_employee_details(emp_name, new_details):
+    for k1, v1 in it_company.items():
+        for k2, v2 in v1.items():
+            if isinstance(v2, list):
+                for data in v2:
+                    if data['name'] ==emp_name:
+                        data.update(new_details)
+                        print(f"updated details of {emp_name}: {data}")
+                        return
+            elif isinstance(v2, dict):
+                for k3, v3 in v2.items():
+                    for data in v3:
+                        if data['name'] == emp_name:
+                            data.update(new_details)
+                            print(f"updated details of {emp_name}: {data}")
+                            return
+update_employee_details(' Rajan T', {'phone': '9443453954'})
+
+print("_"*50)
+
+# Delete Employee Details
+def delete_employee(emp_name):
+    for k1, v1 in it_company.items():
+        for k2, v2 in v1.items():
+            if isinstance(v2, list):
+                for data in v2:
+                    if data['name'] == emp_name:
+                        v2.remove(data)
+                        print(f"Deleted details of {emp_name}")
+                        return
+            elif isinstance(v2, dict):
+                for k3, v3 in v2.items():
+                    for data in v3:
+                        if data['name'] == emp_name:
+                            v3.remove(data)
+                            print(f"Deleted details of {emp_name}")
+                            return
+delete_employee('Sameer Ahuja')
