@@ -340,7 +340,7 @@ w5=str1[23:]
 print(f"{w1[::-1]} {w2[::-1]} {w3[-1]}{w3[1:-1]}{w3[0]} {w4[-1]}{w4[1:-1]}{w4[0]} {w5[-1]}{w5[1:-1]}{w5[0]}")
 print(f'{w1[::-1]} {w2[::-1]} {w3[::-1]} {w4[::-1]} {w5[::-1]}')
 '''
-
+'''
 #4. Write a python program to get email and phone number from given string
 str1 = "Hello python 8989898787 test@gail.com 5654645645 user2@tahoo.com Hope doing good"
 
@@ -354,6 +354,8 @@ for word in wordlist:
         phone = phone + word + " "
     elif at in word:
         email = email + word + " "
+
+
 
 print("Phone numbers: ", phone)
 print("email id: ", email)
@@ -379,3 +381,403 @@ for word in wordlist:
         nextword = word
 
 print("Second longest word: ", nextword)
+
+#program : write a python program provide the shopping bill amount from list of items purchased
+list3 = [('tshirt', 300),
+         ('lower', 400),
+         ('Jeans', 1000),
+         ('Jacket', 2000),
+         ('Watch', 4000)]
+# result provide the total bill amount
+
+result = 0
+
+for i in list3:
+    result = result + i[-1]
+
+print("Total Bill Amount:", result)
+'''
+'''
+# HW1 :  write a python program to second last max value from given list
+list1 = [4, 6, 22, 77, 23, 44, 66, 100]
+output = 77
+max = 0
+next=0
+for i in list1:
+    if i > max:
+        next=max
+        max=i
+    elif max > i > next:
+        next = i
+print("second max value: ",next)
+
+
+# HW2 :  write a python program to move all positive value in left side of the list
+# and negative to right side of the list
+list2 = [4, 7, -2, 8, -11, 44, -7, -22]
+# output = [4, 7, 8, 44, -2, -11, -7, -22]
+list2a = []
+list2b = []
+
+for i in list2:
+    if i > 0:
+        list2a.append(i)
+    else:
+        list2b.append(i)
+
+Result = list2a + list2b
+print("output =", Result)
+
+# HW : Write a Python Program to create a employee management system with the help of list structure.
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+# 1. get employee details with employee ID
+x = input("Enter the employee ID: ")
+for i in employee_details :
+    if i[0] == x :
+        print("Employee Name: ", i[1])
+        print("Employee email ID: ", i[2])
+        print("Employee Location: ", i[3])
+        print("Employee Phone Number: ", i[4])
+        print("Employee Salary: ", i[5])
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+# 2. update employee details
+y = input("Enter employee ID you want to update: ")
+z = ['empid', 'Name', 'emailid', 'Location', 'Phone','Salary']
+
+detail = input("Enter the employee detail you want to update: ")
+update = input("Enter the updated detail: ")
+for j in employee_details:
+    for k in range(len(z)):
+        if j[0] == y:
+            if detail == z[k]:
+                j[k] = update
+
+print(employee_details)
+
+# 3. Add new employee
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+
+Empid = input("Enter Employee ID: ")
+Name = input("Enter Employee Name: ")
+emailid = input("Enter Employee email ID: ")
+Location = input("Enter Employee Location: ")
+Phone = int(input("Enter Employee phone number: "))
+Salary = int(input("Enter Employee Salary: "))
+
+Newlist = [Empid, Name, emailid, Location, Phone, Salary]
+employee_details.extend([Newlist])
+print(employee_details)
+
+# 4. removed employee details with employee ID.
+
+employee_details = [
+    ['emp_123', 'rahul', 'rahul@gmail.com', 'Pune', 7897897987, 400000],
+    ['emp_124', 'mohit', 'mohit@gmail.com', 'Pune', 5435345343, 500000],
+    ['emp_125', 'pooja', 'pooja@gmail.com', 'Pune', 5435345432, 600000],
+    ['emp_126', 'gourav', 'gourav@gmail.com', 'Pune', 4434543223, 700000],
+    ['emp_127', 'sourav', 'sourav@gmail.com', 'Pune', 7897888886, 800000],
+]
+r = input("Enter the Employee ID to remove details: ")
+for i in employee_details:
+    if i[0] == r:
+        employee_details.remove(i)
+
+
+print(employee_details)
+'''
+'''
+#2). Python Dictionary program to print the square of all values in a dictionary.
+Input = {'a': 5,'b' : 3, 'c' :6, 'd' : 8 }
+
+
+for k1,v1 in Input.items():
+    print(k1 ,":", v1**2)
+
+
+#3). Python Dictionary program to move items from dict1 to dict2.
+dict1 = {'name': 'john', 'city': 'Landon', 'country': 'UK'}
+dict2 = {}
+
+for k1,v1 in dict1.items():
+    dict2[k1] = v1
+dict1.clear()
+print("dict1 :", dict1)
+print("dict2 :", dict2)
+'''
+'''
+dict2 = {'a': [3, 5, 7, 8],
+         'b': [2, 6, 8, 9],
+         'c': [1, 4, 7, 8]}
+
+
+#1. get sum of each list values
+dict3 = {}
+for k1,v1 in dict2.items():
+    dict3[k1] = sum(v1)
+print(dict3)
+#2. get average of each list values
+dict4 = {}
+for k1,v1 in dict2.items():
+    dict4[k1] = sum(v1)/len(v1)
+print(dict4)
+'''
+
+it_company = {
+    'HR': {
+        'Recruiter HR': [
+            {'name': 'Aarav Sharma', 'email': 'aarav.sharma@itcompany.com', 'phone': '987-654-3210'},
+            {'name': 'Ishita Verma', 'email': 'ishita.verma@itcompany.com', 'phone': '987-654-3211'}
+        ],
+        'Activity HR': [
+            {'name': 'Ananya Reddy', 'email': 'ananya.reddy@itcompany.com', 'phone': '987-654-3212'},
+            {'name': 'Karan Singh', 'email': 'karan.singh@itcompany.com', 'phone': '987-654-3213'}
+        ],
+        'Payroll HR': [
+            {'name': 'Priya Patel', 'email': 'priya.patel@itcompany.com', 'phone': '987-654-3214'},
+            {'name': 'Vikram Joshi', 'email': 'vikram.joshi@itcompany.com', 'phone': '987-654-3215'}
+        ]
+    },
+    'Management': {
+        'Managers': [
+            {'name': 'Sanya Gupta', 'email': 'sanya.gupta@itcompany.com', 'phone': '987-654-3216'},
+            {'name': 'Rohit Mehta', 'email': 'rohit.mehta@itcompany.com', 'phone': '987-654-3217'},
+            {'name': 'Meera Chawla', 'email': 'meera.chawla@itcompany.com', 'phone': '987-654-3218'}
+        ],
+        'Teamlead': [
+            {'name': 'Kabir Kapoor', 'email': 'kabir.kapoor@itcompany.com', 'phone': '987-654-3219'},
+            {'name': 'Simran Bhatia', 'email': 'simran.bhatia@itcompany.com', 'phone': '987-654-3220'},
+            {'name': 'Aditya Sethi', 'email': 'aditya.sethi@itcompany.com', 'phone': '987-654-3221'}
+        ],
+        'Module Lead': [
+            {'name': 'Riya Nair', 'email': 'riya.nair@itcompany.com', 'phone': '987-654-3222'},
+            {'name': 'Neeraj Malhotra', 'email': 'neeraj.malhotra@itcompany.com', 'phone': '987-654-3223'},
+            {'name': 'Divya Yadav', 'email': 'divya.yadav@itcompany.com', 'phone': '987-654-3224'}
+        ]
+    },
+    'Development': {
+        'UI Dev': {
+            'Sr Dev': [
+                {'name': 'Rahul Rao', 'email': 'rahul.rao@itcompany.com', 'phone': '987-654-3225'},
+                {'name': 'Neha Mishra', 'email': 'neha.mishra@itcompany.com', 'phone': '987-654-3226'}
+            ],
+            'Jr Dev': [
+                {'name': 'Tara Kulkarni', 'email': 'tara.kulkarni@itcompany.com', 'phone': '987-654-3227'},
+                {'name': 'Amit Deshmukh', 'email': 'amit.deshmukh@itcompany.com', 'phone': '987-654-3228'}
+            ]
+        },
+        'API Dev': {
+            'Sr Dev': [
+                {'name': 'Rajesh Menon', 'email': 'rajesh.menon@itcompany.com', 'phone': '987-654-3229'},
+                {'name': 'Pooja Ghosh', 'email': 'pooja.ghosh@itcompany.com', 'phone': '987-654-3230'}
+            ],
+            'Jr Dev': [
+                {'name': 'Manoj Choudhury', 'email': 'manoj.choudhury@itcompany.com', 'phone': '987-654-3231'},
+                {'name': 'Lavanya Shetty', 'email': 'lavanya.shetty@itcompany.com', 'phone': '987-654-3232'}
+            ]
+        },
+        'Database Dev': {
+            'Sr Dev': [
+                {'name': 'Anil Gupta', 'email': 'anil.gupta@itcompany.com', 'phone': '987-654-3233'},
+                {'name': 'Shalini Iyer', 'email': 'shalini.iyer@itcompany.com', 'phone': '987-654-3234'}
+            ],
+            'Jr Dev': [
+                {'name': 'Gautam Kulkarni', 'email': 'gautam.kulkarni@itcompany.com', 'phone': '987-654-3235'},
+                {'name': 'Sanya Bajaj', 'email': 'sanya.bajaj@itcompany.com', 'phone': '987-654-3236'}
+            ]
+        }
+    },
+    'Support': {
+        'Internal Support': [
+            {'name': 'Devika Singh', 'email': 'devika.singh@itcompany.com', 'phone': '987-654-3237'},
+            {'name': 'Ajay Pawar', 'email': 'ajay.pawar@itcompany.com', 'phone': '987-654-3238'}
+        ],
+        'Customer Support': [
+            {'name': 'Ritu Jain', 'email': 'ritu.jain@itcompany.com', 'phone': '987-654-3239'},
+            {'name': 'Naveen Khan', 'email': 'naveen.khan@itcompany.com', 'phone': '987-654-3240'}
+        ]
+    },
+    'Testing': {
+        'Manual Tester': [
+            {'name': 'Radhika Basu', 'email': 'radhika.basu@itcompany.com', 'phone': '987-654-3241'},
+            {'name': 'Suresh Patil', 'email': 'suresh.patil@itcompany.com', 'phone': '987-654-3242'}
+        ],
+        'Automation Tester': [
+            {'name': 'Mitali Joshi', 'email': 'mitali.joshi@itcompany.com', 'phone': '987-654-3243'},
+            {'name': 'Vishal Prasad', 'email': 'vishal.prasad@itcompany.com', 'phone': '987-654-3244'}
+        ],
+        'Performance Tester': [
+            {'name': 'Shruti Kulkarni', 'email': 'shruti.kulkarni@itcompany.com', 'phone': '987-654-3245'},
+            {'name': 'Akash Desai', 'email': 'akash.desai@itcompany.com', 'phone': '987-654-3246'}
+        ],
+        'Security Tester': [
+            {'name': 'Tanvi Kapoor', 'email': 'tanvi.kapoor@itcompany.com', 'phone': '987-654-3247'},
+            {'name': 'Rakesh Rao', 'email': 'rakesh.rao@itcompany.com', 'phone': '987-654-3248'}
+        ]
+    },
+    'Administration': {
+        'Payroll admin': [
+            {'name': 'Parul Nair', 'email': 'parul.nair@itcompany.com', 'phone': '987-654-3249'},
+            {'name': 'Sameer Ahuja', 'email': 'sameer.ahuja@itcompany.com', 'phone': '987-654-3250'}
+        ],
+        'Employee admin': [
+            {'name': 'Sneha Reddy', 'email': 'sneha.reddy@itcompany.com', 'phone': '987-654-3251'},
+            {'name': 'Ravi Sharma', 'email': 'ravi.sharma@itcompany.com', 'phone': '987-654-3252'}
+        ],
+        'Facility admin': [
+            {'name': 'Meghna Dixit', 'email': 'meghna.dixit@itcompany.com', 'phone': '987-654-3253'},
+            {'name': 'Vijay Goel', 'email': 'vijay.goel@itcompany.com', 'phone': '987-654-3254'}
+        ]
+    }
+}
+print("_"*50)
+'''
+from pprint import pprint
+pprint(it_company['HR']['Payroll HR'][1]['phone']) # 987-654-3215
+
+# get all the employee details
+# get specific employee details with their name
+
+# # get all the employee details
+for k1, v1 in it_company.items():
+    #print(k1, ":", v1)
+    for k2, v2 in v1.items():
+        #print(k2,":", v2)
+        if isinstance(v2, list):
+            for data in v2:
+                print(data)
+        elif isinstance(v2, dict):
+            for k3, v3 in v2.items():
+                #print(k3, ":", v3)
+                for data in v3:
+                    print(data)
+
+
+
+print("_"*50)
+
+# get specific employee details with their name
+emp_name = 'Sameer Ahuja'
+mobile_no = ''
+
+for k1, v1 in it_company.items():
+    #print(k1, ":", v1)
+    for k2, v2 in v1.items():
+        #print(k2,":", v2)
+        if isinstance(v2, list):
+            for data in v2:
+                #print(data)
+                if data['name'] == emp_name or data['phone'] == mobile_no:
+                    #print(data)
+                    print(f"Name: {data['name']}\nEmail: {data['email']} \nPhone: {data['phone']}")
+
+        elif isinstance(v2, dict):
+            for k3, v3 in v2.items():
+                #print(k3, ":", v3)
+                for data in v3:
+                    #print(data)
+                    if data['name'] == emp_name or data['phone'] == mobile_no:
+                        #print(data)
+                        print(f" Name: {data['name']}\nEmail: {data['email']} \nPhone: {data['phone']}")
+'''
+print("_"*50)
+# HW :
+# Update Employee Details
+'''
+x = input("Enter the employee details for update: ")
+y = input("Enter the detail you want to update:  ")
+update = input("Enter the updated detail: ")
+
+
+for k1, v1 in it_company.items():
+    #print(k1, ":", v1)
+    for k2, v2 in v1.items():
+        #print(k2,":", v2)
+        if isinstance(v2, list):
+            for data in v2:
+                #print(data)
+                if data['name'] == x or data['phone'] == x or data['email'] == x:
+                    data[y] = update
+                    #print(data)
+                    print(f"Name: {data['name']}\nEmail: {data['email']} \nPhone: {data['phone']}")
+
+        elif isinstance(v2, dict):
+            for k3, v3 in v2.items():
+                #print(k3, ":", v3)
+                for data in v3:
+                    #print(data)
+                    if data['name'] == x or data['phone'] == x or data['email'] == x:
+                        data[y] = update
+                        #print(data)
+                        print(f"Name: {data['name']}\nEmail: {data['email']} \nPhone: {data['phone']}")
+'''
+# Delete Employee Details
+'''
+x = input("Enter the employee details to delete: ")
+for k1, v1 in it_company.items():
+    #print(k1, ":", v1)
+    for k2, v2 in v1.items():
+        #print(k2,":", v2)
+        if isinstance(v2, list):
+            for data in v2:
+                #print(data)
+                if data['name'] == x or data['phone'] == x or data['email'] == x:
+                    v2.remove(data)
+
+                    #print(data)
+                    #print(f"Name: {data['name']}\nEmail: {data['email']} \nPhone: {data['phone']}")
+
+        elif isinstance(v2, dict):
+            for k3, v3 in v2.items():
+                #print(k3, ":", v3)
+                for data in v3:
+                    #print(data)
+                    if data['name'] == x or data['phone'] == x or data['email'] == x:
+                        v3.remove(data)
+                        #print(data)
+                        #print(f"Name: {data['name']}\nEmail: {data['email']} \nPhone: {data['phone']}")
+from pprint import pprint
+pprint(it_company)
+'''
+# Add New employee Details
+
+x = input("Enter the employee department: ")
+y = input("Enter the employee Role: ")
+z = input("Enter the employee sub-role if he is in development: ")
+Name = input("Enter the employee Name: ")
+email = input("Enter the employee email id: ")
+phone = input("Enter the employee phone number: ")
+list1 = ['name', 'email', 'phone']
+list2 = [Name, email, phone]
+empdetails = dict(zip(list1, list2))
+print(empdetails)
+for k1, v1 in it_company.items():
+    if k1 == x:
+        for k2, v2 in v1.items():
+            if k2 == y and isinstance(v2, list):
+                v2.append(empdetails)
+            elif k2 == y:
+                for k3, v3 in v2.items():
+                    if k3 == z:
+                        v3.append(empdetails)
+from pprint import pprint
+pprint(it_company)

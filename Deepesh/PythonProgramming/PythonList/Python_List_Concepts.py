@@ -278,3 +278,102 @@ list_3 = [4, 6, 11, 66, 22, 77, 99]
 result = list(reversed(list_3))
 print("reverse result :", result)
 print("list_3 :", list_3)
+
+
+print(dir(list))
+
+print("_"*50)
+######### replace data in the list ######
+list_aa = [4, 6, 8, 22, 55, 77]
+list_aa[3] = 44
+print("list_aa :", list_aa)
+# [4, 6, 8, 44, 55, 77]
+
+list_aa[:3] = [100, 200, 300]
+
+print("list_aa :", list_aa)
+# [100, 200, 300, 44, 55, 77]
+
+
+print("_"*50)
+############# Copy Method #############
+# shallow copy and Deep Copy
+
+# Shallow copy : IN shallow we just reference one list to another, if we do modification in any list
+#                Then changes will reflect in all the list.
+list_X = [5, 7, 9, 11, 44, 77]
+list_Y = list_X
+list_Y.append(500)
+list_Z = list_Y
+list_Z.append(200)
+print("List x :", list_X)
+print("List x :", list_Y)
+print("List x :", list_Z)
+
+print("_"*50)
+# Deep Copy : When we do deep copy of any list data to another list, then entire content will be fresh
+#             address and if we will do modification in any of the list, so the changes will reflect
+#             in that particular list only.
+
+list_P = [4, 6, 2, 77, 12]
+list_Q = list_P.copy()
+list_Q.append(400)
+print("List_p :", list_P) # [4, 6, 2, 77, 12]
+print("List_Q :", list_Q) # [4, 6, 2, 77, 12, 400]
+
+
+print("_"*50)
+################################## List Comprehension  ########
+# write a python program to get all the even number given list
+list_1 = [4, 6, 8, 2, 55, 1, 12, 13, 15]
+for val in list_1:
+    if val%2 == 0:
+        print(val)
+    else:
+        continue
+
+# List comprehension with if condition
+result = [val for val in list_1 if val%2 == 0]
+print("even values :", result)  # [4, 6, 8, 2, 12]
+
+
+print("_"*50)
+# write a python program to get all the even number given list
+# and store the result in the list in below format
+list_2= [4, 6, 1,  8, 2, 55, 3]
+#output = [(4, 'even'), (6, 'even'), (1, 'odd'), (8, 'even'), (2, 'even'), (55, 'odd'), (3, 'odd')]
+
+result_1 = []
+for val in list_2:
+    if val%2 == 0:
+        result_1.append((val, 'even'))
+    else:
+        result_1.append((val, 'odd'))
+
+print("result1 :", result_1)
+
+# list comprehension with if else condition
+result_2 = [(val, 'even') if val%2 == 0 else (val, 'odd') for val in list_2]
+print("Result2 :", result_2)
+# [(4, 'even'), (6, 'even'), (1, 'odd'), (8, 'even'), (2, 'even'), (55, 'odd'), (3, 'odd')]
+
+
+print("_"*50)
+# program : get square all the values using list comprehension
+list_r = [4, 6, 7, 2, 8, 1, 9]
+square = [val**2 for val in list_r]
+print("square value :", square)
+# [16, 36, 49, 4, 64, 1, 81]
+
+print("_"*50)
+########## Get Max, Min and Sum of the values #########
+list_u = [55, 66, 22, 12, 56, 77]
+
+print("Max value :", max(list_u))
+# Max value : 77
+
+print("Mini value :", min(list_u))
+# Mini value : 12
+
+print("Sum of values :", sum(list_u))
+# Sum of values : 288
