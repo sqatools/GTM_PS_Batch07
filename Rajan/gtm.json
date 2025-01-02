@@ -1,0 +1,697 @@
+{
+ "Resources": {
+  "SharedServicesTransitGateway": {
+   "Type": "AWS::EC2::TransitGateway",
+   "Properties": {
+    "AutoAcceptSharedAttachments": "enable",
+    "DefaultRouteTableAssociation": "disable",
+    "DefaultRouteTablePropagation": "disable",
+    "DnsSupport": "enable",
+    "MulticastSupport": "disable",
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "Name",
+      "Value": "Shared-Services-Transit-Gateway"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ],
+    "VpnEcmpSupport": "enable"
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-Transit-Gateway"
+   }
+  },
+  "SharedServicesResourceShareTGW": {
+   "Type": "AWS::RAM::ResourceShare",
+   "Properties": {
+    "AllowExternalPrincipals": false,
+    "Name": "Shared-Services-Resource-Share-TGW",
+    "Principals": [
+     "arn:aws:organizations::820673055100:organization/o-cur60mbsvz"
+    ],
+    "ResourceArns": [
+     {
+      "Fn::GetAtt": [
+       "SharedServicesTransitGateway",
+       "TransitGatewayArn"
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "Name",
+      "Value": "Shared-Services-Resource-Share-TGW"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ]
+   },
+   "DependsOn": [
+    "SharedServicesTransitGateway"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-Resource-Share-TGW"
+   }
+  },
+  "SharedServicesGlobalNetwork": {
+   "Type": "AWS::NetworkManager::GlobalNetwork",
+   "Properties": {
+    "Description": "Shared-Services-Global-Network",
+    "State": "AVAILABLE",
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "Name",
+      "Value": "Shared-Services-Global-Network"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ]
+   },
+   "DependsOn": [
+    "SharedServicesTransitGateway"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-Global-Network"
+   }
+  },
+  "SharedServicesTGWRegistration": {
+   "Type": "AWS::NetworkManager::TransitGatewayRegistration",
+   "Properties": {
+    "GlobalNetworkId": {
+     "Fn::GetAtt": [
+      "SharedServicesGlobalNetwork",
+      "Id"
+     ]
+    },
+    "TransitGatewayArn": {
+     "Fn::GetAtt": [
+      "SharedServicesTransitGateway",
+      "TransitGatewayArn"
+     ]
+    }
+   },
+   "DependsOn": [
+    "SharedServicesGlobalNetwork",
+    "SharedServicesTransitGateway"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-TGW-Registration"
+   }
+  },
+  "SharedServicesVPNGateway": {
+   "Type": "AWS::EC2::CustomerGateway",
+   "Properties": {
+    "BgpAsn": 65000,
+    "IpAddress": "4.234.146.188",
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ],
+    "Type": "ipsec.1"
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-VPN-Gateway"
+   }
+  },
+  "SharedServicesVPNCloudWatchGroup2": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": "Shared-Services-VPN-CloudWatch-2",
+    "RetentionInDays": 90,
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "Name",
+      "Value": "Shared-Services-VPN-CloudWatch-2"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-VPN-CloudWatch-Group-2"
+   }
+  },
+  "SharedServicesVPNCloudwatchIAMRole9C5FA934": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "RoleName": "Shared-Services-VPN-Cloudwatch-IAM-Role",
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-VPN-Cloudwatch-IAM-Role/Resource"
+   }
+  },
+  "SharedServicesVPNCloudwatchIAMRoleDefaultPolicy2F27BA93": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "SharedServicesVPNCloudWatchGroup2",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SharedServicesVPNCloudwatchIAMRoleDefaultPolicy2F27BA93",
+    "Roles": [
+     {
+      "Ref": "SharedServicesVPNCloudwatchIAMRole9C5FA934"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-VPN-Cloudwatch-IAM-Role/DefaultPolicy/Resource"
+   }
+  },
+  "SharedServicesVPNConnection": {
+   "Type": "AWS::EC2::VPNConnection",
+   "Properties": {
+    "CustomerGatewayId": {
+     "Fn::GetAtt": [
+      "SharedServicesVPNGateway",
+      "CustomerGatewayId"
+     ]
+    },
+    "LocalIpv4NetworkCidr": "172.29.32.0/20",
+    "RemoteIpv4NetworkCidr": "10.0.0.0/13",
+    "StaticRoutesOnly": true,
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ],
+    "TransitGatewayId": {
+     "Fn::GetAtt": [
+      "SharedServicesTransitGateway",
+      "Id"
+     ]
+    },
+    "Type": "ipsec.1",
+    "VpnTunnelOptionsSpecifications": [
+     {
+      "Phase1EncryptionAlgorithms": [
+       {
+        "Value": "AES256"
+       },
+       {
+        "Value": "AES256-GCM-16"
+       }
+      ],
+      "Phase2EncryptionAlgorithms": [
+       {
+        "Value": "AES256"
+       },
+       {
+        "Value": "AES256-GCM-16"
+       }
+      ],
+      "Phase1IntegrityAlgorithms": [
+       {
+        "Value": "SHA2-256"
+       },
+       {
+        "Value": "SHA2-384"
+       },
+       {
+        "Value": "SHA2-512"
+       }
+      ],
+      "Phase2IntegrityAlgorithms": [
+       {
+        "Value": "SHA2-256"
+       },
+       {
+        "Value": "SHA2-384"
+       },
+       {
+        "Value": "SHA2-512"
+       }
+      ],
+      "IKEVersions": [
+       {
+        "Value": "ikev2"
+       }
+      ],
+      "LogOptions": {
+       "CloudwatchLogOptions": {
+        "LogEnabled": true,
+        "LogGroupArn": {
+         "Fn::GetAtt": [
+          "SharedServicesVPNCloudWatchGroup2",
+          "Arn"
+         ]
+        }
+       }
+      }
+     },
+     {
+      "Phase1EncryptionAlgorithms": [
+       {
+        "Value": "AES256"
+       },
+       {
+        "Value": "AES256-GCM-16"
+       }
+      ],
+      "Phase2EncryptionAlgorithms": [
+       {
+        "Value": "AES256"
+       },
+       {
+        "Value": "AES256-GCM-16"
+       }
+      ],
+      "Phase1IntegrityAlgorithms": [
+       {
+        "Value": "SHA2-256"
+       },
+       {
+        "Value": "SHA2-384"
+       },
+       {
+        "Value": "SHA2-512"
+       }
+      ],
+      "Phase2IntegrityAlgorithms": [
+       {
+        "Value": "SHA2-256"
+       },
+       {
+        "Value": "SHA2-384"
+       },
+       {
+        "Value": "SHA2-512"
+       }
+      ],
+      "IKEVersions": [
+       {
+        "Value": "ikev2"
+       }
+      ],
+      "LogOptions": {
+       "CloudwatchLogOptions": {
+        "LogEnabled": true,
+        "LogGroupArn": {
+         "Fn::GetAtt": [
+          "SharedServicesVPNCloudWatchGroup2",
+          "Arn"
+         ]
+        }
+       }
+      }
+     }
+    ]
+   },
+   "DependsOn": [
+    "SharedServicesVPNCloudWatchGroup2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-VPN-Connection"
+   }
+  },
+  "VPNAlarmSNSTopic214C1862": {
+   "Type": "AWS::SNS::Topic",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ],
+    "TopicName": "VPNAlarmSNSTopic"
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/VPNAlarmSNSTopic/Resource"
+   }
+  },
+  "VPNAlarmSNSTopicawsmanagementorigin8tivecom175901B4": {
+   "Type": "AWS::SNS::Subscription",
+   "Properties": {
+    "Endpoint": "awsmanagement@origin8tive.com",
+    "Protocol": "email",
+    "TopicArn": {
+     "Ref": "VPNAlarmSNSTopic214C1862"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/VPNAlarmSNSTopic/awsmanagement@origin8tive.com/Resource"
+   }
+  },
+  "SharedServicesTunnel1Alarm0F748D5B": {
+   "Type": "AWS::CloudWatch::Alarm",
+   "Properties": {
+    "AlarmActions": [
+     {
+      "Ref": "VPNAlarmSNSTopic214C1862"
+     }
+    ],
+    "AlarmDescription": "Tunnel 1 has been down for 15 mins",
+    "AlarmName": "Tunnel1Down",
+    "ComparisonOperator": "LessThanThreshold",
+    "DatapointsToAlarm": 3,
+    "Dimensions": [
+     {
+      "Name": "TunnelIpAddress",
+      "Value": "18.171.64.103"
+     },
+     {
+      "Name": "VpnId",
+      "Value": {
+       "Fn::GetAtt": [
+        "SharedServicesVPNConnection",
+        "VpnConnectionId"
+       ]
+      }
+     }
+    ],
+    "EvaluationPeriods": 3,
+    "MetricName": "TunnelState",
+    "Namespace": "AWS/VPN",
+    "Period": 300,
+    "Statistic": "Sum",
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ],
+    "Threshold": 1
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-Tunnel1-Alarm/Resource"
+   }
+  },
+  "SharedServicesTunnel2Alarm3FB2E008": {
+   "Type": "AWS::CloudWatch::Alarm",
+   "Properties": {
+    "AlarmActions": [
+     {
+      "Ref": "VPNAlarmSNSTopic214C1862"
+     }
+    ],
+    "AlarmDescription": "Tunnel 2 has been down for 15 mins",
+    "AlarmName": "Tunnel2Down",
+    "ComparisonOperator": "LessThanThreshold",
+    "DatapointsToAlarm": 3,
+    "Dimensions": [
+     {
+      "Name": "TunnelIpAddress",
+      "Value": "35.179.199.19"
+     },
+     {
+      "Name": "VpnId",
+      "Value": {
+       "Fn::GetAtt": [
+        "SharedServicesVPNConnection",
+        "VpnConnectionId"
+       ]
+      }
+     }
+    ],
+    "EvaluationPeriods": 3,
+    "MetricName": "TunnelState",
+    "Namespace": "AWS/VPN",
+    "Period": 300,
+    "Statistic": "Sum",
+    "Tags": [
+     {
+      "Key": "environment",
+      "Value": "prod"
+     },
+     {
+      "Key": "flow-log",
+      "Value": "enabled"
+     },
+     {
+      "Key": "owner",
+      "Value": "matt.nash@origin8tive.com"
+     },
+     {
+      "Key": "project",
+      "Value": "Shared-Services"
+     }
+    ],
+    "Threshold": 1
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/Shared-Services-Tunnel2-Alarm/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/2WQwWrEIBCGn2XvxrJbaOmx5JBL2YZk6bVMXJt1Y5wwjoQl+O6NhkKgp/n91G8cT/L48iqPB5h9oa5DYU0nl5ZBDWJF34tWJ7mUP+5C4LzhCljP8BArKYNnHDXt0Fd9LtE5rdigi4JglCtttMdASrc3IC2c5hlpGMFBrym7K4sd2PO2If41a3RvPBNsUou9T9YP7CvCMAmzdlkatDrdzLVGa1R+0Jai8M7L5YKTUVmfQxs6r8hMSZvofh2FshiuM7C6yeXdAo3pSA4xir+JEvsMPAUWuzmjqB98Q/f0LN/W3z3cvTEFBcdm1LLZ6i+joyXKdwEAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "shared-services-transit-gateway-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "TGWIDExport": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SharedServicesTransitGateway",
+     "Id"
+    ]
+   },
+   "Export": {
+    "Name": "TGWIDExport"
+   }
+  },
+  "TGWARNExport": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SharedServicesTransitGateway",
+     "TransitGatewayArn"
+    ]
+   },
+   "Export": {
+    "Name": "TGWARNExport"
+   }
+  },
+  "RSIDExport": {
+   "Value": "SharedServicesResourceShareTGW",
+   "Export": {
+    "Name": "RSIDExport"
+   }
+  },
+  "RSARNExport": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SharedServicesResourceShareTGW",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "RSARNExport"
+   }
+  },
+  "VPNCloudWatchLogGroupARNExport": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SharedServicesVPNCloudWatchGroup2",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "VPNCloudWatchLogGroupARNExport"
+   }
+  },
+  "VPNIDExport": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SharedServicesVPNConnection",
+     "VpnConnectionId"
+    ]
+   },
+   "Export": {
+    "Name": "VPNIDExport"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
