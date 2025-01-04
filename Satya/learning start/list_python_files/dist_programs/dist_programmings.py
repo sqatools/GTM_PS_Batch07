@@ -1,10 +1,10 @@
-dist2 = {"a" : [3, 5, 7, 8],
-         "b" : [2, 6, 8, 9],
-         "c" : [1, 4, 7, 8]}
-total = {}
-avg = {}
+my_house = {"father" :{"name" : "ganga_raju", "work" : "carpenter", "income" : 12000},
+            "mother" :{"name" : "satyavathi", "work" : "house_wife", "income" : 0},
+            "brother" :{"name" :"ramakrishna", "work" : "vs", "income": 30000},
+            "mine":{"name" : "satya", "work" : "software", "income" : 60000}}
 
 
 
+print(["mine']['income"])
 
 
