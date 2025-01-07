@@ -31,3 +31,27 @@ with open("testfile2.txt","r") as file:
      for i in range(len(lines)):
          print(lines[i])
 
+
+
+
+# Class work
+# write a python program to get all the emails from the given file
+# 1.  read file data
+# 2.  split the content to get word list
+# 4.  go through each word using loop
+# 3.  check @ in each word and print the word
+
+
+def find_email_id_email(filepath):
+    with open (filepath,"r") as file:
+        content = file.read()
+        print(content)
+
+    word_list = content.split(" ")
+    print(word_list)
+    for word in word_list:
+        if '@' in word:
+            print(word)
+
+find_email_id_email("email.txt")
+
