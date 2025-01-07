@@ -180,16 +180,66 @@ print(set31)
 set30.issuperset(set31)
 print(set30)
 
+set32 = {1, 2, 3, 4, 5}
+set32.discard(2)
+set32.discard(22)
+print(set32)
+set32.remove(4)
+print(set32)
+
+print()
+set_p = {"a", "b", "c", "d", 3, 5, 7}
+set_q = {"d", 3, 5}
+set_r = {"a", "b", 35}
+
+print(set_q.issubset(set_p)) # True
+
+print(set_p.issuperset(set_q)) # True
+print(set_p.issuperset(set_r)) # False
+
+print(set_q.isdisjoint(set_r)) # True
+
+set_x = {4, 5, 6, 7}
+set_y = set_x
+set_y.add(8)
+
+print(set_x) # {4, 5, 6, 7, 8}
+
+print(set_y) #{4, 5, 6, 7, 8}
+
+set_a = {1, 2, 3, 4}
+set_b = set_a.copy()
+set_b.add(6)
+
+print(set_a) # {1, 2, 3, 4}
+print(set_b) # {1, 2, 3, 4, 6}
 
 
+set_c = {1, 3, 5, 6}
+set_c.clear()
+print(set_c) # set()
+
+# common values between two sets
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [6, 7, 8, 2, 4, 5]
+
+result = set(list1).intersection(set(list2))
+print(result) # {2, 4, 5}
+
+for val in list1:
+    if val in list2:
+        print(val, end="")
 
 
-
-
-
-
-
-
+common = []
+for val in list1:
+    if val in list2:
+        common.append(val)
+    else:
+        continue
+print(common)
+# [2, 4, 5]
 
 
 
