@@ -64,16 +64,48 @@
 
 #Python file program to get odd lines from files and append them to separate files.
 
-def oddline_fromfile(filepath1,filepath2):
-    with open(filepath1,"r") as file1:
-       file1_read= file1.readlines()
+# def oddline_fromfile(filepath1,filepath2):
+#     with open(filepath1,"r") as file1:
+#        file1_read= file1.readlines()
+#
+#     with open(filepath2,"a") as file2:
+#          for l in range(len(file1_read)):
+#             if l% 2 == 0:
+#              file2_read= file2.write(file1_read[l])
+#
+#
+# oddline_fromfile("testfile2.txt","testfile.txt")
 
-    with open(filepath2,"a")as file2:
-         for l in range(len(file1_read)):
-            if l+1 ==0:
-             file2_read= file2.write(file1_read[l])
+
+# #Python file program to read a file line by line and store it in a list
+#
+# def read_by_lines(filepath):
+#     with open(filepath,"r") as file:
+#         content =file.readlines()
+#
+#         result = content.split(" ")
+#
+# read_by_lines("testfile2.txt")
+
+#Python file program to find the longest word in a file
 
 
-oddline_fromfile("testfile2.txt","testfile.txt")
+
+def find_largest_word(filepath):
+    max_len = 0
+    largest_word = " "
+
+    with open(filepath, "r") as file:
+        content = file.read()
+        word_list = content.split()
+
+        for word in word_list:
+            if len(word) > max_len:
+                max_len = len(word)
+                largest_word = word
 
 
+    print(f"The largest word is: '{largest_word}' with length {max_len}")
+
+
+find_largest_word("testfile2.txt")
