@@ -1,0 +1,11 @@
+Collaborate with client development teams to understand software requirements, design specifications, and user stories.
+Collaborate with client development teams to understand software requirements, design specifications, and user stories.
+Collaborate with client development teams to understand software requirements, design specifications, and user stories.
+Execute manual testing, including functional, regression, smoke, and exploratory testing, to ensure that the software meets all specified requirements.
+like TestRail or Zephyr to document and manage test cases, test execution, and reporting.
+Participate in
+Perform risk-based testing to prioritize test efforts based on the criticality of features and potential impact on the end-users.
+client teams during Agile ceremonies (e.g., sprint planning, daily stand-ups, sprint reviews) to ensure seamless integration of testing activities.
+Prepare and deliver detailed test reports and metrics to clients, providing insights into test coverage, defect density, and overall quality status.
+in continuous improvement of testing processes, tools, and techniques to enhance the quality and efficiency of the QA process.
+Provide guidance and support to clients on best practices in manual testing, helping them optimize their own testing processes.
