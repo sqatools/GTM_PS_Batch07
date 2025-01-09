@@ -22,7 +22,6 @@ else:
 for num in range(2, 100):
     count = 1
     for val in range(2, (num//2+1)):
-        #print(val)
         if num%val == 0:
             count += 1
             break
@@ -30,4 +29,4 @@ for num in range(2, 100):
             continue
 
     if count == 1:
-        print(num)
+        print(num, end=" ")
