@@ -172,6 +172,21 @@ def extract_expected_values(python_code):
         "cloudwatch_iam_policy_statements": "\n".join(
             re.findall(r'iam\.PolicyStatement\(\s*actions=\[([\s\S]*?)\],\s*resources', python_code)[0].strip().replace(
                 '"', '').split(",")),
+        "vpn_connection_quantity": len(re.findall(r'ec2.CfnVPNConnection', python_code)),
+        "vpn_connection_tag_id": extract_value(python_code, r'self\.id_ss_vpn_connection\s*=\s*"([^"]+)"').replace("-",
+                                                                                                                   ""),
+        "vpn_connection_type": extract_value(python_code, r'type\s*=\s*"([^"]+)"'),
+        "local_ipv4_network_cidr": extract_value(python_code, r'local_ipv4_network_cidr\s*=\s*"([^"]+)"'),
+        "remote_ipv4_network_cidr": extract_value(python_code, r'remote_ipv4_network_cidr\s*=\s*"([^"]+)"')
+        "vpn_tunnel_options": re.findall(r'VpnTunnelOptionsSpecifications\s*=\s*\[(.*?)\]', python_code, re.DOTALL),
+
+        # 10- extract VPN Alarm SNS Topic from IaC
+        "vpn_alarm_sns_topic_quantity": len(re.findall(r'sns.Topic', python_code)),
+        "vpn_alarm_sns_topic_name": extract_value(python_code, r'topic_name\s*=\s*"([^"]+)"'),
+        # 11-
+        "vpn_alarm_sns_subscription_quantity": len(re.findall(r'vpn_alarm_sns_topic.add_subscription', python_code)),
+        "vpn_alarm_sns_subscription_email": extract_value(python_code, r'EmailSubscription\(\s*"([^"]+)"\s*\)'
+       )
 
     }
 
@@ -578,9 +593,157 @@ def test_validate_cloudwatch_iam_role_default_policy(json_data: dict, expected_v
     assert result
 
 
+#   # Test Case 9: Validate Shared Services VPN Connection
+def test_validate_vpn_connection(json_data: dict, expected_values: dict) -> None:
+    """
+    Test Case 9: Validate Shared Services VPN Connection
+    """
+    print("\n9. Validate Shared Services VPN Gateway:")
+
+    # Get all VPNConnection resources from the JSON
+    resources = json_data.get("Resources", {})
+    if not isinstance(resources, dict):
+        pytest.fail("Invalid JSON structure: 'Resources' should be a dictionary.")
+
+    vpn_connections = [
+        resource for resource in resources.values()
+        if resource.get("Type") == "AWS::EC2::VPNConnection"
+    ]
+
+    if not vpn_connections:
+        pytest.fail("No Shared Services VPN Connection resource found in the JSON.")
+
+    vpn_connection = vpn_connections[0]
+
+    # 9-a: Check the Quantity of VPN Connection
+    actual_quantity = len(vpn_connections)
+    expected_quantity = expected_values["vpn_connection_quantity"]
+    result = actual_quantity == expected_quantity
+    print(format_test_result("9-a)Check the Quantity of VPN Connection", expected_quantity, actual_quantity, result))
+    assert result
+
+    # Test Case 9-b: Validate the Tag ID for VPN Connection
+    expected_tag_id = expected_values.get("vpn_connection_tag_id", None)
+    if expected_tag_id is None:
+        pytest.fail("Key 'vpn_connection_tag_id' is missing in expected_values.")
+
+    actual_tag_id = next(
+        (key for key, resource in resources.items()
+         if resource.get("Type") == "AWS::EC2::VPNConnection"), None
+    )
+    result = actual_tag_id == expected_tag_id
+    print(format_test_result("Test Case 9-b: Validate the Tag ID for VPN Connection", expected_tag_id, actual_tag_id,
+                             result))
+    assert result
+
+    #  Test Case 9-c: Validate the type of VPN Connection
+    expected_type = expected_values["vpn_connection_type"]
+    actual_type = vpn_connection["Properties"]["Type"]
+    result = actual_type == expected_type
+    print(format_test_result("9-c) Validate the type of VPN Connection", expected_type, actual_type, result))
+    assert result
+
+    # 9-d) Validate local_ipv4_network_cidr for VPN Connection:
+    expected_local_ipv4_network_cidr = expected_values["local_ipv4_network_cidr"]
+    actual_local_ipv4_network_cidr = vpn_connection["Properties"]["LocalIpv4NetworkCidr"]
+    result = actual_local_ipv4_network_cidr == expected_local_ipv4_network_cidr
+    print(
+        format_test_result("9-d) Validate local_ipv4_network_cidr for VPN Connection", expected_local_ipv4_network_cidr,
+                           actual_local_ipv4_network_cidr, result))
+    assert result
+    # 9-e) Validate remote_ipv4_network_cidr for VPN Connection
+    expected_remote_ipv4_network_cidr = expected_values["remote_ipv4_network_cidr"]
+    actual_remote_ipv4_network_cidr = vpn_connection["Properties"]["RemoteIpv4NetworkCidr"]
+    result = actual_remote_ipv4_network_cidr == expected_remote_ipv4_network_cidr
+    print(format_test_result("9-e) Validate remote_ipv4_network_cidr for VPN Connection",
+                             expected_remote_ipv4_network_cidr, actual_remote_ipv4_network_cidr, result))
+    assert result
+
+
+"""
+    # 9-f-1: Validate Phase1EncryptionAlgorithms for VPN Connection
+    expected_algorithms = expected_values["vpn_tunnel_options"]
+    phase1_encryption_algorithms = vpn_connection["Properties"]["VpnTunnelOptionsSpecifications"][0]["Phase1EncryptionAlgorithms"]
+    result = sorted(phase1_encryption_algorithms) == sorted(expected_algorithms)
+    print(format_test_result("9-f-1) Validate Phase1EncryptionAlgorithms for VPN Connection", expected_algorithms, phase1_encryption_algorithms, result))
+    assert result
+
+    # 9-f): Validate Vpn Tunnel Options Specifications
+    expected_vpn_tunnel_options = expected_values["vpn_tunnel_options"]
+    actual_vpn_tunnel_options = vpn_connection["Properties"]['VpnTunnelOptionsSpecifications']
+    result = expected_vpn_tunnel_options == actual_vpn_tunnel_options
+    print(format_test_result("9-f) Validate VpnTunnelOptionsSpecifications", expected_vpn_tunnel_options, actual_vpn_tunnel_options, result))
+    assert result, "Test failed due to mismatch between expected and actual VPN tunnel options."
+"""
+
+
+# Test case 10 - Validate VPN Alarm SNS Topic
+def test_validate_vpn_alarm_sns_topic(json_data: dict, expected_values: dict) -> None:
+    """
+    Test case 10 - Validate VPN Alarm SNS Topic
+    """
+    print("\n10. Test case 10 - Validate VPN Alarm SNS Topic:")
+
+    # Extract all SNS Topic resources from the JSON
+    sns_topics = [
+        resource for resource in json_data.get("Resources", {}).values()
+        if resource.get("Type") == "AWS::SNS::Topic"
+    ]
+    sns_topic = sns_topics[0]
+
+    # 10-a) Check the quantity of SNS Topics
+    expected_quantity = expected_values["vpn_alarm_sns_topic_quantity"]
+    actual_quantity = len(sns_topics)
+    result = actual_quantity == expected_quantity
+    print(format_test_result("10-a) Check the Quantity of VPN Alarm SNS Topics", expected_quantity, actual_quantity,
+                             result))
+    assert result
+
+    # 10-b) Validate the topic_name for VPN Alarm SNS Topic
+    expected_topic_name = expected_values["vpn_alarm_sns_topic_name"]
+    actual_topic_name = sns_topic["Properties"]["TopicName"]
+    result = actual_topic_name == expected_topic_name
+    print(format_test_result("10-b) Validate the topic_name for VPN Alarm SNS Topic", expected_topic_name,
+                             actual_topic_name, result))
+    assert result
+
+
+# Test case 11 - Validate VPN Alarm SNS Subscription
+def test_validate_vpn_alarm_sns_subscription(json_data: dict, expected_values: dict) -> None:
+    """
+    Test case 11 - Validate VPN Alarm SNS Subscription
+    """
+    print("\n11. Test case 11 - Validate VPN Alarm SNS Subscription:")
+
+    # Extract all SNS Subscription resources from the JSON
+    sns_subscriptions = [
+        resource for resource in json_data.get("Resources", {}).values()
+        if resource.get("Type") == "AWS::SNS::Subscription"
+    ]
+    sns_subscription = sns_subscriptions[0]
+
+    # 11-a) Check the quantity of SNS Subscriptions
+    expected_quantity = expected_values["vpn_alarm_sns_subscription_quantity"]
+    actual_quantity = len(sns_subscriptions)
+    result = actual_quantity == expected_quantity
+    print(format_test_result("11-a) Check the Quantity of VPN Alarm SNS Subscriptions", expected_quantity,
+                             actual_quantity, result))
+    assert result
+
+    # 11-b) Validate the email address for the SNS Subscription
+    expected_email = expected_values["vpn_alarm_sns_subscription_email"]
+    actual_email = sns_subscription["Properties"]["Endpoint"]
+    result = actual_email == expected_email
+    print(format_test_result("11-b) Validate the email address for VPN Alarm SNS Subscription", expected_email,
+                             actual_email, result))
+    assert result
+
+
 # Completion message
 def test_completion():
     """
     Print a message indicating that all tests have been completed.
     """
     print("Tests completed.")
+
+######################################################################################################################
