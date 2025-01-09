@@ -18,6 +18,8 @@ def readexcel1_file(filepath,cell_name):
 readexcel1_file("Testdata.xlsx", "A3")
 
 
-def readexcel_file_loop(filepath):
-    wb = openpyxl.load_workbook(filepath)
-    sheet
+read_excel_file_with_cellname("test_data.xlsx", "A2")
+("test_data.xlsx", "G4")
+
+for i in range(1, 6):
+    read_excel_file_with_cellname("test_data.xlsx", f"A{i}")
