@@ -9,10 +9,15 @@ method :  When defined any function inside the class, then it is called method, 
                                instance method/object method.
          2. class method. :  When we defined any method with decorator @classmethod and cls as first
                              parameter, then it is called class method. Class method only deals with
-                             class variables.
-         4. static method.
+                             class variables. 
+                             ->  we can call the class method with the help of class name, no need to create
+                                 object.
+         4. static method. :  static method is associated with class, no need to create object of the class
+                            to access the static method.
 
-
+self :  Self is nothing but the object of the class current class being created.
+        ->  when we call any instance method through the object, then internally the first parameter to
+            the method is object itself.
 
 
 constructor : constructor which initialize the memory for the object.
@@ -43,6 +48,8 @@ Polymorphism
 Encapsulation
 Data abstraction
 """
+
+var_p = 500
 # class with default constructor
 class ABC:
     def __init__(self):
@@ -57,6 +64,8 @@ class ABC:
 
 
 # class with parametrized constructor
+
+var_q = 600
 class XYZ:
     # class variable
     city = 'Mumbai'
@@ -79,6 +88,15 @@ class XYZ:
     @classmethod
     def show_city_name(cls):
         print("city name :", cls.city)
+        
+    @staticmethod
+    def get_factorial(num):
+        print("global variable var_q:", var_q)
+        fact = 1
+        for i in range(num, 0, -1):
+            fact = fact*i
+        print(f"Factorial of {num}:", fact)
+        
 
 
 obj1 = XYZ(30, 50)
@@ -93,3 +111,20 @@ obj1.__setattr__('n2', 200)
 obj1.addition()
 #print("addition of value :", obj1.n1 + obj1.n2)
 print(obj1.city)
+print("######### Access method with class name ##############")
+XYZ.show_city_name()
+#XYZ.addition()
+# TypeError: XYZ.addition() missing 1 required positional argument: 'self'
+
+
+print("######### Access static method with class name ##############")
+# No need to create object of the class to access static method.
+XYZ.get_factorial(5)
+
+
+print("######### call the instance method with class name ##############")
+# use of self.
+obj1.addition()
+# XYZ.addition()
+# TypeError: XYZ.addition() missing 1 required positional argument: 'self'
+XYZ.addition(obj1)
