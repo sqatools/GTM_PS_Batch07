@@ -13,7 +13,7 @@ os.chdir("E:\\Filesdata")
 print("current directory :", os.getcwd())
 """
 
-####  create a directory on local system ####
+####  creamn te a directory on local system ####
 # os.mkdir("folder1") # create folder
 # os.rmdir("folder1")  # remove folder
 

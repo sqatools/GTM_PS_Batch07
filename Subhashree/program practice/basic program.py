@@ -31,7 +31,7 @@ print("*"*50)
 #Input:
 a = 40
 b = 50
-c = 30
+c = 30^
 print("5.Average of value a,b,c =",(a+b+c)/3)
 
 print("*"*50)
