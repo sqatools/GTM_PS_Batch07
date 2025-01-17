@@ -38,5 +38,8 @@ print("4.The value of simple interest",SI)
 
 #5. program to get compound interest
 #formula of compound interest:CI = P*(1+(R/100))**N - P
+P=20
+R=50
+N=2
 CI = P*(1+(R/100))**N - P
 print("5.The value of compound interest",CI)
