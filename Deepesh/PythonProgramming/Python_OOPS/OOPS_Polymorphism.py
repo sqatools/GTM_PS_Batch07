@@ -9,7 +9,8 @@ There some polymorphism types
                       -> python does not support method overloading, it only consider latest
                       defined method.
 
--> Operator Overloading
+-> Operator Overloading : When one operator handle multiple data type operations, then it is called
+                        operator overloading. e.g using +, we can add number and string as well.
 
 '"""
 
@@ -64,9 +65,35 @@ class son(father):
         print("Very good evening")
 
 
-obj = son('Rohit', 'Mohan Gupta',  '4 BHK', 'BMW')
-obj.show_all_details()
-obj.show_father_house()
-print("_"*50)
-obj.greeting()
-obj.addition(50, 60)
+# obj = son('Rohit', 'Mohan Gupta',  '4 BHK', 'BMW')
+# obj.show_all_details()
+# obj.show_father_house()
+# print("_"*50)
+# obj.greeting()
+# obj.addition(50, 60)
+
+
+#################### Operator Overloading ##############
+
+num1 = 40
+num2 = 50
+print("addition :", num1+num2)
+print("addition :", num1.__add__(num2))
+
+s1 = 'Hello '
+s2 = 'Good Morning'
+print(s1+s2) # Hello Good Morning
+print(s1.__add__(s2)) # Hello Good Morning
+
+print(dir(str))
+print(dir(int))
+
+
+##### multiplication ####
+m1 = 67
+m2 = 7
+s3 = 'Python'
+print("multiplication :", m1*m2)
+print("multiplication :", m1.__mul__(m2))
+
+print("repeat string :", s3.__mul__(m2))
