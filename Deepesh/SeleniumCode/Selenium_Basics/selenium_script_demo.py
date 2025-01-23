@@ -1,6 +1,7 @@
 """
 # install selenium using below command
 pip install selenium
+# Run pip install selenium command in the terminal
 
 # Check selenium version in python library list
 pip list # run this command to get list of installed packaged
