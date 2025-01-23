@@ -759,7 +759,7 @@ from pprint import pprint
 pprint(it_company)
 '''
 # Add New employee Details
-
+'''
 x = input("Enter the employee department: ")
 y = input("Enter the employee Role: ")
 z = input("Enter the employee sub-role if he is in development: ")
@@ -781,3 +781,27 @@ for k1, v1 in it_company.items():
                         v3.append(empdetails)
 from pprint import pprint
 pprint(it_company)
+'''
+'''
+def find_email(file1):
+    with open(file1,"r") as file1obj:
+        file1data = file1obj.read()
+       # print(file1data)
+        worklist = file1data.split()
+        for i in worklist:
+            if "@" in i:
+                print(i)
+
+find_email("userdata.txt")
+'''
+
+def write(file,file1):
+    with open(file,"r") as file:
+        filedata = file.read()
+        print(filedata)
+
+   # with open(file1, "a") as file1obj:
+       # file1data = file1obj.write(filedata)
+        #print(file1data)
+
+write("userdata.txt", "file1.txt")
