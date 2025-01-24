@@ -23,6 +23,8 @@ driver.maximize_window()
 driver.implicitly_wait(10)
 driver.get("https://automationbysqatools.blogspot.com/2021/05/dummy-website.html")
 
+driver.find_element(By.XPATH,"//input[contains(@value, 'radio_123')]").click()
+driver.find_element(By.XPATH,"//input[contains(@value, 'radio_345')]").click()
 driver.find_element(By.ID,"firstname").send_keys("Ahmed")
 driver.find_element(By.NAME,"birthday").send_keys("07-10-1991")
 driver.find_element(By.ID,"male").click()
