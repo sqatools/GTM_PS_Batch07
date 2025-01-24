@@ -1,0 +1,50 @@
+XPath : Xpath is locator which identify the element with help the DOM structure path.
+
+There are two types of xpaths:
+
+1). Absolute xpath :  Absolute xpath follow completed structure of html code to identify the element
+                      e.g. /html/body/div[3]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]/div[1]/ul/li[1]/input
+                      ->  Absolute xpath is very un-stable xpath, the failure changes are very high in Absolute xpath
+
+2). Relative xpath :  Relative xpath find the element with help of specific element attributes.
+                      e.g.  //tagname[@attribute='value']
+                      //input[@value='radio_123']      # xpath with tag name
+                      //*[@value='radio_123']          # xpath without tag name
+                      //ul//li/input[@value='radio_123']   #  xpath with parent tags
+                      //button[@data-testid="royal_login_button"]
+
+   Basic Relative xpath Method:
+   1).  text method
+   2).  contains method
+   3).  start-with
+   4).   AND condition between between attribute value
+   5).   AND condition between between attribute value
+
+
+    1).  text method :  This method help us to identify the element with text visible on UI.
+
+         ->  //tagname[text()='attribute']
+              //a[text()='Pytest Framework']
+
+         -> tagname(text()="text value")
+         -> //a[text()='onlinetraining']
+
+         -> //li/a[text()='Home']
+         -> //button[text()='Log in']
+
+
+    2).  Contains : This method search the content with the help of contains method.
+         # contains element attribute
+         //tagname[contains(@attribute, "attribute value")]
+         //input[contains(@placeholder, "Email address")]
+
+
+         # contains text method
+         //tagname[contains(text(), 'text value')]
+         //a[contains(text(), 'Home')]
+         //button[contains(text(),"Log")]
+
+         //a[contains(text(), 'Home')]
+         //input[contains(@value, 'radio_3')]
+         //button[contains(@data-testid,"royal_login")]
+
