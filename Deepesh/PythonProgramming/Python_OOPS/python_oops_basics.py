@@ -59,8 +59,8 @@ class ABC:
     def greeting(self):
         print("Good Morning")
 
-# obj = ABC()
-#obj.greeting()
+obj = ABC()
+obj.greeting()
 
 
 # class with parametrized constructor
