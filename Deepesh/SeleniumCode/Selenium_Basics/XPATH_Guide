@@ -108,13 +108,31 @@ There are two types of xpaths:
                      e.g. //ref_tagname[@attrib='value']//preceding::tar_tagname[@attrib='value']
                      ->  //input[@name='postcode']//preceding::input[@id='fromcity']
 
-    4). Preceding-sibling :
+    4). Preceding-sibling : When we want to indentify any element that is younger to reference element
+                            and they belongs to same parent, then it is called preceding-sibling.
+
                        e.g. //ref_tagname[@attrib='value']//following-sibling::tar_tagname[@attrib='value']
                        -> //td[text()='6001']//preceding-sibling::td/input
-    5). parent
-    6). ancestor
-    7). child
 
+    5). parent : When we want to take reference child and target to parent element, then will use parent method.
+                  e.g.. //ref_tagname[@attrib='value']//parent::tar_tagname[@attrib='value']
+                        //input[@value='radio_123']//parent::li
+                        //td[text()='Pune']//parent::tr
+                        //td[text()='Indore']//parent::tr/td/input[@type='checkbox']
+
+
+    6). ancestor : when we want identify grand parent element from reference of grand child, then
+                   will use ancestor method.
+
+                  e.g.. //ref_tagname[@attrib='value']//ancestor::tar_tagname[@attrib='value']
+                  //td[text()='Indore']//ancestor::table//td[text()='Delhi']
+
+    7). child : When we want identify any child or grand child with reference of parent or grand parent
+                then will use child method.
+
+                e.g.. //ref_tagname[@attrib='value']//child::tar_tagname[@attrib='value']
+                //table[@id='cities']//child::td[text()='Pune']
+                //table[@id='cities']//td[text()='Pune']
 
    Home work : https://www.goibibo.com/
 
