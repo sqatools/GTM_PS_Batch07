@@ -1,10 +1,11 @@
+'''
 import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
-'''
+
 # open URL in the browser
 driver.get("https://www.google.co.in")
 
@@ -18,7 +19,7 @@ driver.find_element(By.NAME, "btnK").click()
 time.sleep(10)
 driver.close()
 '''
-
+'''
 driver.maximize_window()
 driver.implicitly_wait(10)
 driver.get("https://automationbysqatools.blogspot.com/2021/05/dummy-website.html")
@@ -53,4 +54,24 @@ driver.find_element(By.CLASS_NAME, 'contact-form-email-message').send_keys("Hell
 driver.find_element(By.CLASS_NAME, 'contact-form-button.contact-form-button-submit').click()
 driver.find_element(By.NAME, 'q').send_keys("Automation")
 driver.find_element(By.CLASS_NAME, 'gsc-search-button').click()
+time.sleep(10)
+'''
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.implicitly_wait(10)
+driver.get("https://www.goibibo.com/")
+driver.find_element(By.XPATH, '//*[contains(@class, "logSprite icClose")]').click()
+driver.find_element(By.XPATH, '//*[contains(@class, "sc-jlwm9r-1 ewETUe")]').click()
+#driver.find_element(By.XPATH, '//*[contains(@id, "deny")]').click()
+driver.find_element(By.XPATH, '//*[text()="From"]//following-sibling::p[contains(@class, "sc-12foipm-6 erPfRs")]').click()
+driver.find_element(By.XPATH, '//*[contains(@class, "sc-12foipm-26 bIIzJX")]//following-sibling::*[contains(@type, "text")]').send_keys("Bengaluru")
+driver.find_element(By.XPATH, '//*[text()="Bengaluru, India"]//parent::*[contains(@class,"sc-12foipm-33 kUcHKT")]').click()
+#driver.find_element(By.XPATH, '//*[text()="To"]//following-sibling::p[contains(@class, "sc-12foipm-6 erPfRs")]').click()
+driver.find_element(By.XPATH, '//*[contains(@class, "sc-12foipm-26 bIIzJX")]//following-sibling::*[contains(@type, "text")]').send_keys("Chennai")
+driver.find_element(By.XPATH, '//*[text()="Chennai, India"]//parent::*[contains(@class,"sc-12foipm-33 kUcHKT")]').click()
 time.sleep(10)
