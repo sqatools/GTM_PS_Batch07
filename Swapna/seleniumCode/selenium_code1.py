@@ -4,14 +4,15 @@ from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
 # open URL in the browser
-driver.get("https://www.google.co.in")
+driver.get("https://www.goibibo.com/")
 
 # set initial wait for web elements
 driver.implicitly_wait(10)
 driver.maximize_window() # maximize local browser window
 
-driver.find_element(By.NAME, "q").send_keys("Python Selenium")
-driver.find_element(By.NAME, "btnK").click()
+driver.find_element(By.CSS_SELECTOR,"span[role ='presentation']").click()
+
+
 
 time.sleep(10)
 driver.close()

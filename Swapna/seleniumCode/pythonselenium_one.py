@@ -35,3 +35,6 @@ driver.find_element(By.PARTIAL_LINK_TEXT,"Pytest").click()
 
 time.sleep(5)
 driver.close
+
+
+
