@@ -2,6 +2,10 @@
 
 
 import time
+import pyautogui
+"""
+pip install pyautogui
+"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -71,7 +75,27 @@ def scroll_to_element():
     action.click()
     action.perform()
 
+
+
+# scroll_to_element()
+
+def context_click():
+    driver.get("https://www.globalsqa.com/demo-site/draganddrop/")
+    about_element = driver.find_element(By.XPATH, "//div[@id='menu']//a[text()='About']")
+    action = ActionChains(driver)
+    action.context_click(about_element)
+    action.perform()
+    time.sleep(5)
+    # pyautogui.press("left")
+    # time.sleep(2)
+    pyautogui.press("up")
+    time.sleep(2)
+    pyautogui.press("enter")
     time.sleep(5)
 
 
-scroll_to_element()
+context_click()
+
+
+
+
