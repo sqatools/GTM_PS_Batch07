@@ -1,0 +1,67 @@
+# https://smartbear.com/learn/automated-testing/test-automation-frameworks/
+
+What is framework:
+
+A testing framework is a set of guidelines and rules used for creating the design of test cases or test
+scenarios, A framework combination of practices and tools that are designed to help QA Professional to
+test the application more efficiently.
+
+# Benefits of Automation Framework
+
+->  Improve test efficiency
+->  Lower maintenance cost of test cases.
+->  Minimum manual intervention
+->  Maximum test coverage of any application
+->  Re-usability of code.
+->  Faster debugging of failure
+->  Quick report generation
+
+# Types of Automation Framework
+
+-> Linear Automation Framework:
+    -> When record the automation test cases and execute it, its called linear framework
+    -> When we create individual script for each task maintain separately.
+
+
+-> Modular Based Testing Framework:
+   ->  In Module framework we divide the test cases in multiple units or function and section, each
+       of the section is isolated.
+
+-> Library Based Testing Framework:
+   ->  In library framework we can design the specific library that we can use in all modules
+       we have created in moduler framework. e.g. selenium code library, file handling library.
+
+-> Data-Driven Framework:
+   -> When we read the test data from external file and use in automation framework, thn it is called
+      data driven framework. e.g. read data from excel file or json file, or database.
+
+-> Keyword Driven Framework:
+   ->  In keyword driven framework, ready to use keyword are available to perform any
+       specific task.
+   ->  User can use the predefined n number and times to complete task
+   e.g. Robotframework
+
+-> Hybrid Framework:
+   ->  Hybrid framework is combination of all above framework that we discussed.
+   ->  User will use all the properties of different framework and to create highly efficient
+       and re-usable framework.
+
+
+
+#####################################################
+# Pytest : Pytest is Python Library through which we can create test file, test function.
+           ->  grouping of test case.
+           ->  Marking test cases
+           ->  Parallel execution
+           ->  Add logging in the framework
+           ->  Generate report for the framework
+           ->  Create configuration files for framework
+           ->  Parameterize the test cases
+           ->  User can exclude or include test cases as per their required during the execution.
+
+
+
+POM (Page Object Model) : POM is design pattern of the class structure of the Automation Framework
+                 -> In POM user will create class for each page of the application
+                 -> User can create the object of the page class whenever required.
+

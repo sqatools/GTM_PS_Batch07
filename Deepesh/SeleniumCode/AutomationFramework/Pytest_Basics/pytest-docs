@@ -1,0 +1,16 @@
+# install pytest on system with below command
+  ->  pip install pytest
+
+# check pytest install or not , with below command
+  -> pip list # check pytest should be available in python packages list
+  e.g. pytest             8.0.2
+
+->  Each test file has to start with test_ as prefix
+
+->  Each test function has to start with test_ as prefix
+
+->  command to execute pytest test file.
+    -> open terminal in same location where test file is present
+    ->  then run below command
+        ->  python -m pytest -v test_smoke_case.py
+
