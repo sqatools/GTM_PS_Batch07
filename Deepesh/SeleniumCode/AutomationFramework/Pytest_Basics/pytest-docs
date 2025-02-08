@@ -14,3 +14,45 @@
     ->  then run below command
         ->  python -m pytest -v test_smoke_case.py
 
+
+->  Grouping of test cases with the help of markers
+     ->  command to execute specific marker test cases
+         -> python -m pytest -v -m "smoke" .\test_group_of_test_cases.py
+
+
+     -> command to execute multiple markers of test cases with OR condition
+        -> python -m pytest -v -m "smoke or sanity" .\test_group_of_test_cases.py
+        result : ======================= 2 failed, 3 passed, 3 deselected, 11 warnings in 0.51s =====
+
+
+     -> command to execute with multiple markers of test cases with AND condition
+        -> python -m pytest -v -m "smoke and sanity" .\test_group_of_test_cases.py
+        -> ===== 1 passed, 7 deselected, 11 warnings in 0.45s =======
+
+
+# Execute the automation test cases with XFAIL marker.
+
+     ->  python -m pytest -v .\test_xfail_marker_case.py
+     -> =========== 2 passed, 2 xfailed in 0.75s =======
+     test_xfail_marker_case.py::test_addition PASSED                                                                                    [ 25%]
+    test_xfail_marker_case.py::test_multiplication XFAIL                                                                               [ 50%]
+    test_xfail_marker_case.py::test_subtraction PASSED                                                                                 [ 75%]
+    test_xfail_marker_case.py::test_divide XFAIL
+
+     ->  If any expected test passed, then will consider output in xpassed.
+
+            test_xfail_marker_case.py::test_addition PASSED                                                                                    [ 25%]
+            test_xfail_marker_case.py::test_multiplication XPASS                                                                               [ 50%]
+            test_xfail_marker_case.py::test_subtraction PASSED                                                                                 [ 75%]
+            test_xfail_marker_case.py::test_divide XFAIL
+            ==== 2 passed, 1 xfailed, 1 xpassed in 1.96s ======
+
+
+# Skip marker of test cases :
+        test_snkip_testcasses.py::test_addition PASSED                                                                                     [ 25%]
+        test_snkip_testcasses.py::test_multiplication SKIPPED (unconditional skip)                                                         [ 50%]
+        test_snkip_testcasses.py::test_subtraction PASSED                                                                                  [ 75%]
+        test_snkip_testcasses.py::test_divide SKIPPED (10Yrs)
+        ========== 2 passed, 2 skipped in 0.84s ========
+
+
