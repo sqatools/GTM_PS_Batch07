@@ -56,3 +56,13 @@
         ========== 2 passed, 2 skipped in 0.84s ========
 
 
+
+# Generate a html report in pytest
+pytest-html
+pip install pytest-html
+
+# command to generate a html report
+ -> python -m pytest -v -s .\test_google_search.py --html=report.html
+ # execute all the test files
+ ->  python -m pytest -v -s .\ --html=common_report.html
+
