@@ -1,0 +1,21 @@
+There are five3 types of CSS selector
+1. ID:  We can identify element with ID directly
+     -> #fromcity
+     -> #billing_name
+
+2. Class: We can identify element with class name directly
+     -> .post-title.entry-title
+     -> h3.post-title.entry-title
+
+3. Attribute : We can identify the element with help of attribute
+     -> tagname[attribute='value']
+     -> input[data-testid="royal-email"]
+     -> button[type="submit"]
+
+4. Sub-string:  We can identify the element with the help of partial attribute value.
+                tagname[attribute^='value']
+                -> input[data-testid^="royal-e"]
+                -> input[placeholder^="Email"]
+5. Parent navigation :
+                 -> div > input[placeholder^="Email"]
+                 -> form> div > a[data-testid="open-registration-form-button"]

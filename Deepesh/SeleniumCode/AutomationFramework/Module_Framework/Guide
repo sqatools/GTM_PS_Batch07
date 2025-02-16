@@ -1,0 +1,6 @@
+1.  Selenium Code :  This file will contain only selenium code
+2.  locator File :  Locator file will contains locator of specified page
+3.  Page Class File :  This File will contains page class of module
+4.  Test File :  Test file will only contains test cases
+5.  conftest.py :  conftest file is common fixture file where we create all fixtures.
+6.  test data file :  Test data file keep all the content of testing.

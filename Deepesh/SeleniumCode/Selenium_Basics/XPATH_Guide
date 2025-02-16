@@ -1,0 +1,140 @@
+XPath : Xpath is locator which identify the element with help the DOM structure path.
+
+There are two types of xpaths:
+
+1). Absolute xpath :  Absolute xpath follow completed structure of html code to identify the element
+                      e.g. /html/body/div[3]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[4]/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[2]/div[1]/ul/li[1]/input
+                      ->  Absolute xpath is very un-stable xpath, the failure changes are very high in Absolute xpath
+
+2). Relative xpath :  Relative xpath find the element with help of specific element attributes.
+                      e.g.  //tagname[@attribute='value']
+                      //input[@value='radio_123']      # xpath with tag name
+                      //*[@value='radio_123']          # xpath without tag name
+                      //ul//li/input[@value='radio_123']   #  xpath with parent tags
+                      //button[@data-testid="royal_login_button"]
+
+   Basic Relative xpath Method:
+   1).  text method
+   2).  contains method
+   3).   AND condition between between attribute value
+   4).   OR condition between between attribute value
+   5).   starts-with method.
+   6). Indexing in list of element :
+
+
+    1).  text method :  This method help us to identify the element with text visible on UI.
+
+         ->  //tagname[text()='attribute']
+              //a[text()='Pytest Framework']
+
+         -> tagname(text()="text value")
+         -> //a[text()='onlinetraining']
+
+         -> //li/a[text()='Home']
+         -> //button[text()='Log in']
+
+
+    2).  Contains : This method search the content with the help of contains method.
+         # contains element attribute
+         //tagname[contains(@attribute, "attribute value")]
+         //input[contains(@placeholder, "Email address")]
+
+
+         # contains text method
+         //tagname[contains(text(), 'text value')]
+         //a[contains(text(), 'Home')]
+         //button[contains(text(),"Log")]
+
+         //a[contains(text(), 'Home')]
+         //input[contains(@value, 'radio_3')]
+         //button[contains(@data-testid,"royal_login")]
+
+    3).  AND logic in xpath: In case of and logic in xpath, both the condition of attribute
+         should be be matched.
+
+         //tagname[@attrib1='value' and @attrib2 ='value']
+         //tagname[contains(@attrib1,'value') and @attrib2 ='value']
+         //tagname[text()='value' and @attrib2 ='value']
+
+        # facebook.com
+        //input[contains(@class, 'inputtext') and @data-testid='royal_email']
+        //input[@name='email' and @data-testid='royal_email']
+        //*[@role='button' and @data-testid="open-registration-form-button"]
+
+
+    4).  OR logic in xpath: In case of OR logic in xpath, anyone condition can be true to match
+         the element.
+
+         //input[contains(@class, 'inputtext') or @data-testid='royal_email']
+         //button[@name='login' or @id='login']
+
+
+    5). start-with method : In this method will write the xpath with the help initial word any attribute
+        //tagname[starts-with(@attribute, 'start-value')]
+
+        ->   //a[starts-with(@data-testid,"open")]
+        ->   //input[starts-with(@data-testid,"royal_e")]
+
+
+    6).  Indexing in xpath : If multiple elements are matching with same attribute, then we can identify
+                             one element with the help of indexing
+
+                            -> (//input[@value='checkbox'])[1]
+                            -> (//ul//input[@type='radio'])[1]
+
+
+    Notes :  IF we write xpath and take help grand parent of parent element then we have to // or /
+    double // :  means we can move any level down from parent element
+    single / :  We can move one level from parent element
+
+
+    ################################ Advance xpath Methods #######################
+
+    1). Following : All the element which are in lower side on web page from reference then it is following
+                    element:
+                    e.g //ref_tagname[@attrib='value']//following::tar_tagname[@attrib='value']
+                    -> //input[@name='postcode']//following::td[text()='Delhi']
+
+    2). Following-sibling: When there are four singling elements which belongs with same parent element
+                           then in that case we can take reference of younger sibling element to identify
+                           the elder one
+
+                           e.g. //ref_tagname[@attrib='value']//following-sibling::tar_tagname[@attrib='value']
+                          ->  //td[text()='6001']//following-sibling::td[text()='1033']
+
+    3). Preceding :  When we want to indentify any element which is available in upper side from reference
+                     element, then it is called preceding element
+
+                     e.g. //ref_tagname[@attrib='value']//preceding::tar_tagname[@attrib='value']
+                     ->  //input[@name='postcode']//preceding::input[@id='fromcity']
+
+    4). Preceding-sibling : When we want to indentify any element that is younger to reference element
+                            and they belongs to same parent, then it is called preceding-sibling.
+
+                       e.g. //ref_tagname[@attrib='value']//following-sibling::tar_tagname[@attrib='value']
+                       -> //td[text()='6001']//preceding-sibling::td/input
+
+    5). parent : When we want to take reference child and target to parent element, then will use parent method.
+                  e.g.. //ref_tagname[@attrib='value']//parent::tar_tagname[@attrib='value']
+                        //input[@value='radio_123']//parent::li
+                        //td[text()='Pune']//parent::tr
+                        //td[text()='Indore']//parent::tr/td/input[@type='checkbox']
+
+
+    6). ancestor : when we want identify grand parent element from reference of grand child, then
+                   will use ancestor method.
+
+                  e.g.. //ref_tagname[@attrib='value']//ancestor::tar_tagname[@attrib='value']
+                  //td[text()='Indore']//ancestor::table//td[text()='Delhi']
+
+    7). child : When we want identify any child or grand child with reference of parent or grand parent
+                then will use child method.
+
+                e.g.. //ref_tagname[@attrib='value']//child::tar_tagname[@attrib='value']
+                //table[@id='cities']//child::td[text()='Pune']
+                //table[@id='cities']//td[text()='Pune']
+
+   Home work : https://www.goibibo.com/
+
+
+

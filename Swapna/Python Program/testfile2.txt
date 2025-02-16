@@ -1,0 +1,18 @@
+Collaborate with client development teams to understand software requirements, design specifications, and user stories.
+Develop and maintain comprehensive test plans, test strategies, and test cases that align with the Software Testing Process (STP).
+Execute manual testing, including functional, regression, smoke, and exploratory testing, to ensure that the software meets all specified requirements.
+Utilize test management tools
+like TestRail or Zephyr to document and manage test cases, test execution, and reporting.
+Identify, log, and track defects using defect tracking tools like Jira, Linear, and ensure clear communication with client developers for timely resolution.
+Participate in
+the full lifecycle of testing, including Test Planning, Test Design, Test Execution, Defect Reporting, and Test Closure.
+Perform risk-based testing to prioritize test efforts based on the criticality of features and potential impact on the end-users.
+Collaborate with
+client teams during Agile ceremonies (e.g., sprint planning, daily stand-ups, sprint reviews) to ensure seamless integration of testing activities.
+Conduct test case reviews with client stakeholders to ensure comprehensive coverage and alignment with requirements.
+Prepare and deliver detailed test reports and metrics to clients, providing insights into test coverage, defect density, and overall quality status.
+Engage
+in continuous improvement of testing processes, tools, and techniques to enhance the quality and efficiency of the QA process.
+Maintain test environments and coordinate with client teams to ensure that testing is conducted in a stable and representative environment.
+Provide guidance and support to clients on best practices in manual testing, helping them optimize their own testing processes.
+Requirements:testing for appendingtesting for appendingtesting for appendingtesting for appendingtesting for appendingtesting for appendingtesting for appendingtesting for appendingtesting for appending
