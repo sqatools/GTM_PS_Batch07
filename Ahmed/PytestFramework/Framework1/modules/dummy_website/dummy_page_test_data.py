@@ -1,0 +1,10 @@
+dummy_website_url = "https://automationbysqatools.blogspot.com/2021/05/dummy-website.html"
+pass_first_name = 'Rahul'
+pass_last_name = 'Gupta'
+pass_dob = "03/22/2025"
+more_pass_option = "Add 3 more passenger (200%)"
+from_city = 'Mumbai'
+dest_city = 'Kolkata'
+depart_date = "04/22/2025"
+return_date = "04/27/2025"
+visa_date = "02/02/2025"
