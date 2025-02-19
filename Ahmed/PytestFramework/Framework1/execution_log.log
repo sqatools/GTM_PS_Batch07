@@ -1,0 +1,4 @@
+2025-02-19 19:44:01 [INFO] (selenium_base.py:18) looking for element: ('xpath', '//*[contains(@class, "logSprite icClose")]')
+2025-02-19 19:44:01 [INFO] (selenium_base.py:25) clicking on element: ('xpath', '//*[contains(@class, "logSprite icClose")]')
+2025-02-19 19:44:01 [INFO] (selenium_base.py:18) looking for element: ('xpath', '//*[contains(@class, "sc-jlwm9r-1 ewETUe")]')
+2025-02-19 19:44:01 [INFO] (selenium_base.py:25) clicking on element: ('xpath', '//*[contains(@class, "sc-jlwm9r-1 ewETUe")]')
