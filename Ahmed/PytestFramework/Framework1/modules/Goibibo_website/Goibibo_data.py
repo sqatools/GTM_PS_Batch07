@@ -1,5 +1,9 @@
 url = "https://www.goibibo.com/"
-from_city_name = "Bengaluru, India"
-to_city_name = "Chennai, India"
+from_city = "Bengaluru"
+to_city = "Chennai"
 depart_date = "Apr 02"
 return_date = "Apr 14"
+no_of_adults = 2
+no_of_child = 1
+no_of_infant = 1
+class_select = "premium economy"

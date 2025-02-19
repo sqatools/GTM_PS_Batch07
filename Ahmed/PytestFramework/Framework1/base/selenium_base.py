@@ -2,6 +2,7 @@ import logging
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.by import By
 
 
 
@@ -38,3 +39,9 @@ class SeleniumBase:
         self.log.info(f"selecting value: {value},  on element: {locator}")
         select_elem = Select(element)
         select_elem.select_by_visible_text(value)
+
+    def switch_iframe(self, locator):
+        self.driver.switch_to.frame(locator)
+
+    def switch_default(self):
+        self.driver.switch_to.default()
