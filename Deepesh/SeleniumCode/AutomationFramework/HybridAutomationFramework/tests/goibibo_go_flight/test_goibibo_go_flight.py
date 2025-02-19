@@ -7,7 +7,7 @@ from utilities.utils_tools import Utils
 
 
 
-@pytest.mark.usefixtures("get_driver")
+@pytest.mark.usefixtures("launch_goibibo_website")
 class TestGoibiboGoFlight:
 
     @pytest.fixture(autouse=True)
@@ -17,10 +17,8 @@ class TestGoibiboGoFlight:
         cur_loc = os.getcwd()
         self.json_data = self.ut.read_json_file(f"{cur_loc}//modules//goibibo_go_flight//goibibo_test_data.json")
 
-
-
     def test_seach_a_flight(self):
-        self.fb.open_flight_booking_page(goibibo_url)
+        #self.fb.open_flight_booking_page(goibibo_url)
         self.fb.close_login_popup()
         self.fb.select_from_city(from_city_name)
         self.fb.select_to_city(to_city_name)
