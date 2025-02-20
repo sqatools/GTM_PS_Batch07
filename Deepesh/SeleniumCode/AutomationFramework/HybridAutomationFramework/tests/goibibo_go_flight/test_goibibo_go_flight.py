@@ -17,9 +17,11 @@ class TestGoibiboGoFlight:
         cur_loc = os.getcwd()
         self.json_data = self.ut.read_json_file(f"{cur_loc}//modules//goibibo_go_flight//goibibo_test_data.json")
 
-    def test_seach_a_flight(self):
+    def test_search_a_flight(self):
         #self.fb.open_flight_booking_page(goibibo_url)
         self.fb.close_login_popup()
+        self.fb.deny_push_notification()
+        time.sleep(5)
         self.fb.select_from_city(from_city_name)
         self.fb.select_to_city(to_city_name)
         self.fb.select_departure_date(self.json_data['depart_date'])

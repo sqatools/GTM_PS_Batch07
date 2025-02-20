@@ -6,7 +6,6 @@ from selenium.webdriver.support.select import Select
 from utilities.utils_tools import Utils
 
 
-
 class SeleniumBase:
     def __init__(self, driver, timeout=30):
         self.driver = driver
@@ -49,3 +48,10 @@ class SeleniumBase:
         self.log.info(f"selecting value: {value},  on element: {locator}")
         select_elem = Select(element)
         select_elem.select_by_visible_text(value)
+
+    def switch_to_iframe(self, locator, **kwargs):
+        element = self.get_element(locator, **kwargs)
+        self.driver.switch_to.frame(element)
+
+    def switch_to_default_page(self):
+        self.driver.switch_to.default_content()

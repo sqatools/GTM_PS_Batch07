@@ -27,10 +27,10 @@ class DummyWebsitePage(SeleniumBase):
     def enter_dest_city_name(self, dest_city):
         self.send_text(dest_city_field, dest_city)
 
-    def enter_departure_date(self,depart_date):
+    def enter_departure_date(self, depart_date):
         self.send_text(depart_date_calender, depart_date)
 
-    def enter_return_date(self,return_date):
+    def enter_return_date(self, return_date):
         self.send_text(return_date_calender, return_date)
 
     def enter_visa_date(self, visa_date):
@@ -38,4 +38,19 @@ class DummyWebsitePage(SeleniumBase):
 
     def select_whatapp_receive_option(self):
         self.click_element(whats_app_radio)
+
+    def enter_billing_name(self, billing_name):
+        self.send_text(billing_name_field, billing_name)
+
+    def enter_billing_phone(self, billing_phone):
+        self.send_text(billing_phone_field, billing_phone)
+
+    def enter_billing_email(self, billing_email):
+        self.send_text(billing_email_field, billing_email)
+
+    def enter_billing_address(self, billing_address):
+        self.send_text(billing_address_field, billing_address)
+
+    def select_billing_country(self, country_name):
+        self.select_dropdown_value(billing_country_dropdown, country_name)
 

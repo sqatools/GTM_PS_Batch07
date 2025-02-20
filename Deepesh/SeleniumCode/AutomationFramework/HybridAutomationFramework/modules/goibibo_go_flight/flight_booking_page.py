@@ -61,3 +61,8 @@ class FlightBooking(SeleniumBase):
 
     def click_search_button(self):
         self.click_element(search_flight_button)
+
+    def deny_push_notification(self):
+        self.switch_to_iframe(webpush_iframe_id)
+        self.click_element(will_do_later_option)
+        self.switch_to_default_page()
