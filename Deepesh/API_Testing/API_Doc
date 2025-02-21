@@ -1,0 +1,38 @@
+# What is API:  API (Application Programming Interface) is the interface between the presentation layer and data base layer.
+                ->  API takes input from client send to server. server consume input values and provide response
+                ->  API will take response from server and return back to client in form JSON and provide the response code as well.
+
+
+1) Presentation Layer (End user can use)
+2) Business Layer (API)
+3) Data Base Layer (data base server)
+
+
+url = https://www.google.co.in/gmail
+https : protocol
+www.google.co.in = server host
+/gmail = API end point.
+
+# Rest API :  Rest API works with http protocol which has different methods to work on
+
+HTTP Method:
+
+GET Method : Get method return the exiting data available in the database and return response code.
+POST Method : Post method perform crud operation to create new entry in the database.
+PUT Method :  PUT method we use for updating the existing information.
+PATCH Method : PATCH method use for updating the specific attribute of existing data.
+DELETE Method : Delete method remove the entry from database
+
+Category for response code
+
+100 - 199 : information response
+200 - 299 :  Success response
+300 - 399 : Re-directional response
+400 - 499 : Client error response
+500 - 599 : Server Error response
+
+Please refer notes given below.
+https://restfulapi.net/http-status-codes/
+
+
+
