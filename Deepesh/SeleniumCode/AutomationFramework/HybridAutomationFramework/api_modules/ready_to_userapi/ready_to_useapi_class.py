@@ -1,6 +1,7 @@
 from base.api_base import APIBase
 from .ready_to_useapi_data import *
 
+
 class ReadToUserAPI(APIBase):
 
     def get_all_object_details(self):
