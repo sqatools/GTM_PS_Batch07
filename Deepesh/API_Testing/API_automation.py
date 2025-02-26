@@ -161,3 +161,15 @@ def get_specific_id_details(id):
 
 #get_specific_id_details("ff808181932badb601953d95479c19c6")
 # {'error': 'Oject with id=ff808181932badb601953d95479c19c6 was not found.'}
+
+
+def api_with_bearer_authentication():
+    url = "https://gorest.co.in/public/v2/users"
+    access_token = "2c23a02b621b71b08c567fab7d5a82459005026b8e4f14ac936f4d3e3b99e9e7"
+    headers = {'Authorization': f"Bearer {access_token}"}
+    response = requests.request("GET", url, headers=headers)
+    pprint(response.json())
+    print(response.status_code)
+
+
+api_with_bearer_authentication()
