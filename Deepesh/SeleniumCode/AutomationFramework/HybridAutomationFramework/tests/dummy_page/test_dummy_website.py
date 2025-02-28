@@ -20,7 +20,7 @@ class TestDummyTicketBooking:
     def test_enter_passenger_details(self):
         self.dwp.enter_first_name(pass_first_name)
         self.dwp.enter_last_name(pass_last_name)
-
+    @pytest.mark.sanity
     def test_enter_dob_details(self):
         self.dwp.enter_date_of_birth(pass_dob)
         self.dwp.select_add_more_passenger(more_pass_option)
@@ -31,6 +31,7 @@ class TestDummyTicketBooking:
         self.dwp.enter_from_city_name(from_city)
         self.dwp.enter_dest_city_name(dest_city)
 
+    @pytest.mark.smoke
     def test_enter_travel_date(self):
         self.dwp.enter_departure_date(depart_date)
         self.dwp.enter_return_date(return_date)
