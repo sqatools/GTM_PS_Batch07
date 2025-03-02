@@ -1,0 +1,5 @@
+goibibo_url = "https://www.goibibo.com/"
+source_city = "SBC"
+dest_city = "MAS"
+mmyy = "March 2025"
+dd = "12"
