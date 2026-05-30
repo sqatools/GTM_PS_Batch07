@@ -1,0 +1,5 @@
+
+
+ ##Python Python program to check whether the input number if a multiple of two print “Fizz”
+ #instead of the number and for the multiples of three print “Buzz”.
+ #For numbers that are multiples of both two and three print “FizzBuzz”.
